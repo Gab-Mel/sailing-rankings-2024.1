@@ -58,19 +58,19 @@ for each_column in range(0, 118):
 
     # 28 - QF
     try:
-        linha.append(nomes_filtrados[list_of_index_aux[28]].replace("\r", "").replace("\x9a", "").replace("\n", "").split(" ")[3])
+        linha.append(nomes_filtrados[list_of_index_aux[28]].replace("\r", "").replace("\x9a", "").replace("\n", "").split(" ")[2])
     except:
         linha.append("")
 
     # 29 - SF
     try:
-        linha.append(nomes_filtrados[list_of_index_aux[29]].replace("\r", "").replace("\x9a", "").replace("\n", "").split(" ")[3])
+        linha.append(nomes_filtrados[list_of_index_aux[29]].replace("\r", "").replace("\x9a", "").replace("\n", "").split(" ")[2])
     except:
         linha.append("")
 
     # 30 - F
     try:
-        linha.append((nomes_filtrados[list_of_index_aux[30]].replace("\r", "").replace("\x9a", "").replace("\n", "").split(" "))[3])
+        linha.append((nomes_filtrados[list_of_index_aux[30]].replace("\r", "").replace("\x9a", "").replace("\n", "").split(" "))[2])
     except:
         linha.append("")
     
