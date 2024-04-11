@@ -50,7 +50,7 @@ df_10 = pd.DataFrame(columns=["Regata", "Nome Competidor", "Pontuação Regata",
 df_11 = pd.DataFrame(columns=["Regata", "Nome Competidor", "Pontuação Regata", "Classe Vela", "Posição Geral"], data=merge("scraping_2024/49erfx_wc.csv", 4, 20, 2, "49erfx"))
 
 # MERGE DOS DADOS
-df_final = pd.concat([df_1, df_2, df_3, df_4, df_5, df_6, df_7, df_8, df_9, df_10, df_11])
+df_final = pd.concat([df_1, df_2, df_3, df_4, df_5, df_6, df_7, df_8, df_9, df_10, df_11, df_12, df_13, df_14, df_15, df_16, df_17])
 
 # TRATANDO AS POSIÇÕES
 
@@ -72,46 +72,4 @@ def trata_nomes(valor:str):
 
 df_final['Nome Competidor'] = df_final['Nome Competidor'].apply(trata_nomes)
 
-# TRATANDO PONTUAÇÃO
-def trata_pontuacao(valor:str):
-    """
-    """
-    # valores normais 15
-    try:
-        return int(valor)
-    except:
-
-        # valores com ponto, mas sem parêntese 15.0
-        try:
-            return int(str(valor).split(".")[0])
-        
-        except:
-            try:
-                # valores com ponto, e com parêntese (15.0)
-                return int(str(valor).split(".")[0][1:])
-            
-            except:
-                # valores sem pontos, mas com parêntes (15)
-                try:
-                    return int(str(valor).split(")")[0][1:])
-                
-                except:
-                    # começam com numeros
-                    try:
-                        return int(str(valor)[1:3])
-                    except:
-                        try:
-                            return int(str(valor).split("(")[1][0:2])
-                        except:
-                            try:
-                                return int(str(valor).split(" ")[1][0:2])
-                            except:
-                                try:
-                                    return int(str(valor).split(".")[1])
-                                except:
-                                    print(valor)
-                                    return "Nada"
-
-df_final["Pontuação Regata"] = df_final["Pontuação Regata"].apply(trata_pontuacao)  
-
-print(df_final["Pontuação Regata"].value_counts())
+print(df)
