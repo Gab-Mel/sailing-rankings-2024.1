@@ -25,7 +25,7 @@ for i in range(len(nomes_filtrados)):
         coluna = (coluna.upper()).split("-")
         coluna.insert(5, "UNKNOW")
     
-    if i >= 2 and i <= 112:
+    if i >= 2 and i <= 139:
         linha = linha[1:-1]
         linha = linha.replace("-\u00A0-", "-").replace("--", "-")
         linha = (linha.upper()).split("-")
@@ -38,10 +38,27 @@ for i in range(len(nomes_filtrados)):
             int(linha[5])
             linha.insert(5, "NO")
         except:
-            pass
-            
-        if i!=48 and i!=94:
-            list_of_data.append(linha)
+            if linha[5][0] == "(":
+                linha.insert(5, "NO")
 
+        if i == 48:
+            df = pd.DataFrame(list_of_data, columns=coluna)
+            df.to_csv('ilca_7_ec_gold.csv', index=False)
+            list_of_data = list()
+            coluna = linha
+            continue
+            
+
+        if i == 94:
+            coluna.insert(5, "UNKNOW")
+            df = pd.DataFrame(list_of_data, columns=coluna)
+            df.to_csv('ilca_7_ec_silver.csv', index=False)
+            list_of_data = list()
+            coluna = linha
+            continue
+        
+        list_of_data.append(linha)
+
+coluna.insert(5, "UNKNOW")
 df = pd.DataFrame(list_of_data, columns=coluna)
-df.to_csv('ilca_7_ec.csv', index=False)
+df.to_csv('ilca_7_ec_bronze.csv', index=False)

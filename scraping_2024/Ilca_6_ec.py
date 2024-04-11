@@ -40,8 +40,15 @@ for i in range(len(nomes_filtrados)):
         except:
             pass
 
+        if linha[0] == "RANK":
+            df = pd.DataFrame(list_of_data, columns=coluna)
+            df.to_csv('ilca_6_ec_gold.csv', index=False)
+            list_of_data = list()
+            coluna = linha
+            coluna.insert(5, "UNKNOW")
+            continue
 
         list_of_data.append(linha)
 
 df = pd.DataFrame(list_of_data, columns=coluna)
-df.to_csv('ilca_6_ec.csv', index=False)
+df.to_csv('ilca_6_ec_silver.csv', index=False)
