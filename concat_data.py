@@ -1,14 +1,15 @@
 import pandas as pd 
 import numpy as np 
+import unidecode 
 
 # TRATANDO AS NOMES
 def trata_nomes(valor:str):
     """
     """
-    if valor.count("(") != 0:
-        return valor.split("(")[0].strip()
+    if str(valor).count("(") != 0:
+        return str(valor).split("(")[0].strip()
     else:
-        return valor
+        return str(valor)
 
 def merge(data_path:str, first_race:int, last_race:int, name_index:int, nome_classe:str, position_index:int=0, flag_name:str="OVER", competition_name:str=None):
     """
@@ -59,10 +60,10 @@ df_2 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "No
 df_3 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/kite_wc_men_over_silver.csv", 6, 25, 2, "Kite Masc.", flag_name="Silver", competition_name="World Championship 2024"))
 df_4 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/kite_wc_men_over_bronze.csv", 5, 24, 1, "Kite Masc.", 25, flag_name="Bronze", competition_name="World Championship 2024"))
 df_5 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/kite_wc_men_over_gold.csv", 6, 25, 2, "Kite Masc.", flag_name="Gold", competition_name="World Championship 2024"))
-df_6 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/iqfoil_wc_women.csv", 11, 33, 6, "IQFoil Fem.", 1, competition_name="World Championship 2024"))
-df_7 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/iqfoil_wc_men.csv", 11, 32, 6, "IQFoil Masc.", 1, competition_name="World Championship 2024"))
+df_6 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/iqfoil_wc_women.csv", 12, 34, 7, "IQFoil Fem.", 1, competition_name="World Championship 2024"))
+df_7 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/iqfoil_wc_men.csv", 14, 35, 9, "IQFoil Masc.", 1, competition_name="World Championship 2024"))
 df_8 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/ilca_7_wc.csv", 6, 16, 4, "ILCA 7", 1, competition_name="World Championship 2024"))
-df_9 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/ilca_7_ec_gold.csv", 7, 14, 4, "ILCA 7", 1, flag_name="Gold", competition_name="European Championship 2024"))
+df_9 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/ilca_7_ec_gold.csv", 8, 15, 5, "ILCA 7", 1, flag_name="Gold", competition_name="European Championship 2024"))
 df_10 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/ilca_7_ec_silver.csv", 7, 13, 4, "ILCA 7", 1, flag_name="Silver", competition_name="European Championship 2024"))
 df_11 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/ilca_7_ec_bronze.csv", 7, 13, 4, "ILCA 7", 1, flag_name="Bronze", competition_name="European Championship 2024"))
 df_12 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/ilca_6_wc.csv", 6, 16, 4, "ILCA 6", 1, competition_name="World Championship 2024"))
@@ -74,9 +75,9 @@ df_17 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "N
 
 df_final = pd.concat([df_1, df_2, df_3, df_4, df_5, df_6, df_7, df_8, df_9, df_10, df_11, df_12, df_13, df_14, df_15, df_16, df_17])
 
-df_final = df_final.dropna(subset=['Pontuação Regata (Nha)']).reset_index(drop=True)
-
 df_final['Nome Competidor'] = df_final['Nome Competidor'].apply(trata_nomes)
+
+df_final = df_final.dropna(subset=['Pontuação Regata (Nha)']).reset_index(drop=True)
 
 # TRATANDO AS POSIÇÕES
 def trata_posicao(valor:str):
@@ -96,6 +97,7 @@ def trata_pontuacao(valor:str):
 df_final['Pontuação Regata'] = df_final['Pontuação Regata (Nha)'].apply(trata_pontuacao)
 
 df_final = df_final.loc[df_final['Pontuação Regata'] != 0].reset_index(drop=True)
+df_final = df_final.loc[df_final['Pontuação Regata'] != "nan"].reset_index(drop=True)
 
 # TRATANDO DESCARTES TODO
 # tem que olhar depois para alguns valores inusitados
