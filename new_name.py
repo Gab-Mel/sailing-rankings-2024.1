@@ -10,7 +10,7 @@ for i in range(len(final_data)):
     if final_data["ID Competidor"].iloc[i] > new_id:
         new_id = final_data["ID Competidor"].iloc[i]
 
-temp_data = pd.read_csv("df_merged_2024.csv")
+temp_data = pd.read_csv("sumulas.csv")
 
 conjunto_de_nomes = set(temp_data["Nome Competidor"])
 conjunto_de_nomes_antigos = set(final_data["Nome Competidor"])
