@@ -23,5 +23,5 @@ for cada_atleta in nomes_novos:
 
 df_final = pd.DataFrame(data=list(dict_id.items()), columns=["Nome Competidor", "ID Competidor"])
 
-df_final.to_excel("temp_data.xlsx")
+df_final.to_excel("atletas.xlsx")
 

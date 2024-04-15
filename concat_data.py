@@ -153,4 +153,5 @@ def trata_net(valor:str):
 df_final['Total'] = df_final['Identificador'].apply(trata_total)
 df_final['Net'] = df_final['Identificador'].apply(trata_net)
 
-df_final.to_csv('df_merged_2024.csv', index=False)
+df_final.to_csv('sumulas.csv', index=False)
+df_final.to_excel('sumulas.xlsx', index=False)
