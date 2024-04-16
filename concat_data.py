@@ -1,6 +1,7 @@
 import pandas as pd 
 import numpy as np 
-import unidecode 
+#import unidecode 
+import os
 
 # TRATANDO AS NOMES
 def trata_nomes(valor:str):
@@ -73,11 +74,26 @@ df_15 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "N
 df_16 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/49er_wc.csv", 6, 23, 4, "49er", 2, competition_name="World Championship 2024"))
 df_17 = pd.DataFrame(columns=["Identificador", "Nome Competição", "Regata", "Nome Competidor", "Pontuação Regata (Nha)", "Classe Vela", "Flag Name", "Posição Geral"], data=merge("scraping_2024/49erfx_wc.csv", 6, 22, 4, "49erfx", 2, competition_name="World Championship 2024"))
 
-df_final = pd.concat([df_1, df_2, df_3, df_4, df_5, df_6, df_7, df_8, df_9, df_10, df_11, df_12, df_13, df_14, df_15, df_16, df_17])
+df_list_manager2sail = []
+for file in os.listdir("scrapers/temp-scraped-data/"):
+    if file.endswith(".xlsx"):
+        df_list_manager2sail.append(pd.read_excel("scrapers/temp-scraped-data/" + file))
+
+df_18 = pd.concat(df_list_manager2sail)
+print(df_18.columns)
+df_18 = df_18.rename(columns={'Pontuação Regata': 'Pontuação Regata (Nha)'})
+df_18 = df_18.rename(columns={'Pontuação Total': 'Total'})
+df_18 = df_18.rename(columns={'Nett': 'Net'})
+print(df_18[:10])
+
+
+df_final = pd.concat([df_1, df_2, df_3, df_4, df_5, df_6, df_7, df_8, df_9, df_10, df_11, df_12, df_13, df_14, df_15, df_16, df_17, df_18])
+
 
 df_final['Nome Competidor'] = df_final['Nome Competidor'].apply(trata_nomes)
 
 df_final = df_final.dropna(subset=['Pontuação Regata (Nha)']).reset_index(drop=True)
+
 
 # TRATANDO AS POSIÇÕES
 def trata_posicao(valor:str):
@@ -85,19 +101,24 @@ def trata_posicao(valor:str):
     """
     return str(valor).replace("TH", "").replace("ST", "").replace("RD", "").replace("ND", "")
 
+
 df_final['Posição Geral'] = df_final['Posição Geral'].apply(trata_posicao)
 
 # TRATANDO PONTUAÇÕES
-def trata_pontuacao(valor:str):
-    try:
-        return float(valor.split("-")[0])
-    except:
-        return 0
+def trata_pontuacao(valor):
+    if type(valor) == str:
+        try:
+            return float(valor.split("-")[0])
+        except:
+            return 0
+    else:
+        return valor
 
 df_final['Pontuação Regata'] = df_final['Pontuação Regata (Nha)'].apply(trata_pontuacao)
-
 df_final = df_final.loc[df_final['Pontuação Regata'] != 0].reset_index(drop=True)
 df_final = df_final.loc[df_final['Pontuação Regata'] != "nan"].reset_index(drop=True)
+
+
 
 # TRATANDO DESCARTES TODO
 # tem que olhar depois para alguns valores inusitados
@@ -106,8 +127,10 @@ def trata_descartes(valor:str):
         return valor.split("-")[1]
     except:
         return valor
-    
+
 df_final['Descarte'] = df_final['Pontuação Regata (Nha)'].apply(trata_descartes)
+
+
 
 #TRATANDO PUNIÇÕES
 def trata_punicoes(valor:str):
@@ -118,6 +141,8 @@ def trata_punicoes(valor:str):
     
 df_final['Punição'] = df_final['Pontuação Regata (Nha)'].apply(trata_punicoes)
 
+
+
 # TRATA FLOTILHA
 def trata_flotilha(valor:str):
     lista = ["F", "SF", "QF", "MEDAL", "FINAL"]
@@ -127,6 +152,8 @@ def trata_flotilha(valor:str):
         return "GERAL"
 
 df_final['Flotilha'] = df_final['Regata'].apply(trata_flotilha)
+
+
 
 # TRATA TOTAL E NET
 lista_de_participacoes_unicas = list(set(df_final["Identificador"]))
@@ -144,6 +171,7 @@ for cada_participação in lista_de_participacoes_unicas:
     df_temp = df_temp[df_temp["Descarte"] == "0"]
     dict_net[cada_participação] = df_temp["Pontuação Regata"].sum()
 
+
 def trata_total(valor:str):
     return dict_total[valor]
 
@@ -152,6 +180,7 @@ def trata_net(valor:str):
 
 df_final['Total'] = df_final['Identificador'].apply(trata_total)
 df_final['Net'] = df_final['Identificador'].apply(trata_net)
+
 
 df_final.to_csv('sumulas.csv', index=False)
 df_final.to_excel('sumulas.xlsx', index=False)
