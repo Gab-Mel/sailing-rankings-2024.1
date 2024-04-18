@@ -80,19 +80,23 @@ for file in os.listdir("scrapers/temp-scraped-data/"):
         df_list_manager2sail.append(pd.read_excel("scrapers/temp-scraped-data/" + file))
 
 df_18 = pd.concat(df_list_manager2sail)
-print(df_18.columns)
-df_18 = df_18.rename(columns={'Pontuação Regata': 'Pontuação Regata (Nha)'})
+
 df_18 = df_18.rename(columns={'Pontuação Total': 'Total'})
 df_18 = df_18.rename(columns={'Nett': 'Net'})
-print(df_18[:10])
+#df_18['Identificador'] = df_18['Nome Competidor'] + " - " + df_18['Classe Vela'] + " - " + df_18['Nome Competição']
 
-
-df_final = pd.concat([df_1, df_2, df_3, df_4, df_5, df_6, df_7, df_8, df_9, df_10, df_11, df_12, df_13, df_14, df_15, df_16, df_17, df_18])
+df_final = pd.concat([df_1, df_2, df_3, df_4, df_5, df_6, df_7, df_8, df_9, df_10, df_11, df_12, df_13, df_14, df_15, df_16, df_17])
 
 
 df_final['Nome Competidor'] = df_final['Nome Competidor'].apply(trata_nomes)
 
 df_final = df_final.dropna(subset=['Pontuação Regata (Nha)']).reset_index(drop=True)
+df_final = df_final.dropna(subset=['Posição Geral']).reset_index(drop=True)
+df_final = df_final.dropna(subset=['Nome Competidor']).reset_index(drop=True)
+df_final = df_final.dropna(subset=['Classe Vela']).reset_index(drop=True)
+df_final = df_final.dropna(subset=['Nome Competição']).reset_index(drop=True)
+
+
 
 
 # TRATANDO AS POSIÇÕES
@@ -129,8 +133,6 @@ def trata_descartes(valor:str):
         return valor
 
 df_final['Descarte'] = df_final['Pontuação Regata (Nha)'].apply(trata_descartes)
-
-
 
 #TRATANDO PUNIÇÕES
 def trata_punicoes(valor:str):
@@ -181,6 +183,18 @@ def trata_net(valor:str):
 df_final['Total'] = df_final['Identificador'].apply(trata_total)
 df_final['Net'] = df_final['Identificador'].apply(trata_net)
 
+df_final = pd.concat([df_final, df_18]).reset_index(drop=True)
+
+
+""" melhor remover ao fazer análize.
+df_final = df_final.dropna(subset=['Descarte']).reset_index(drop=True)
+df_final = df_final.dropna(subset=['Flotilha']).reset_index(drop=True)
+df_final = df_final.dropna(subset=['Total']).reset_index(drop=True)
+df_final = df_final.dropna(subset=['Net']).reset_index(drop=True)
+"""
+
+print(len(df_final))
+print(df_final.columns)
 
 df_final.to_csv('sumulas.csv', index=False)
 df_final.to_excel('sumulas.xlsx', index=False)
