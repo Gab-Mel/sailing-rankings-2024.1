@@ -249,6 +249,7 @@ def cluster9(reference: dict):
     extracted_data['Flotilha'] = extracted_data['Flotilha'].apply(rename_fleet_cluster9)
 
     extracted_data.to_excel(f'../temp-scraped-data/{reference["Nome Competição"]}_{reference["Classe Vela"]}.xlsx', index=False)
+    extracted_data.to_excel(f'../scraped-data/{reference["Nome Competição"]}_{reference["Classe Vela"]}.xlsx', index=False)
     
     return extracted_data
 
