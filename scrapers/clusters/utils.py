@@ -128,6 +128,8 @@ def cluster8(URL: str, PATH_TO_CHROMEDRIVER: str, NOME_COMPETICAO: str, ID_COMPE
     
     df_49er.rename(columns={'variable': 'Flotilha', 'value': 'Pontuação Regata'}, inplace=True)
     df_49erFX.rename(columns={'variable': 'Flotilha', 'value': 'Pontuação Regata'}, inplace=True)
+    df_49er["Regata"] = df_49er["Flotilha"]
+    df_49erFX["Regata"] = df_49erFX["Flotilha"]
     
     df_49er['Nome Competição'] = [NOME_COMPETICAO] * len(df_49er)
     df_49erFX['Nome Competição'] = [NOME_COMPETICAO] * len(df_49erFX)
@@ -143,7 +145,7 @@ def cluster8(URL: str, PATH_TO_CHROMEDRIVER: str, NOME_COMPETICAO: str, ID_COMPE
     
     column_order = ['Nome Competidor', 'ID Competição', 'Classe Vela',
                     'Pontuação Regata', 'Flotilha', 'Posição Geral', 
-                    'Punição', 'Pontuação Total', 'Nett', 'Nome Competição']
+                    'Punição', 'Pontuação Total', 'Nett', 'Nome Competição', 'Regata']
     
     df_49er = df_49er[column_order]
     df_49erFX = df_49erFX[column_order]
@@ -162,8 +164,8 @@ def cluster8(URL: str, PATH_TO_CHROMEDRIVER: str, NOME_COMPETICAO: str, ID_COMPE
     df_49er = df_49er[df_49er['Pontuação Regata'] != '']
     df_49erFX = df_49erFX[df_49erFX['Pontuação Regata'] != '']
     
-    df_49er.to_excel(f'scraped-data/{NOME_COMPETICAO}_49er.xlsx', index=False)
-    df_49erFX.to_excel(f'scraped-data/{NOME_COMPETICAO}_49erFX.xlsx', index=False)
+    # df_49er.to_excel(f'scraped-data/{NOME_COMPETICAO}_49er.xlsx', index=False)
+    # df_49erFX.to_excel(f'scraped-data/{NOME_COMPETICAO}_49erFX.xlsx', index=False)
     
     return df_49er, df_49erFX
 
