@@ -294,7 +294,7 @@ def add_columns(df, CAMPEONATO, ID_CAMPEONATO, CLASSE, FLOTILHA=None):
     
     column_order = ['Nome Competidor', 'ID Competição', 'Classe Vela', 'Pontuação Regata',
                     'Flotilha', 'Posição Geral', 'Punição', 'Pontuação Total', 
-                    'Nett', 'Nome Competição']
+                    'Nett', 'Nome Competição', 'Regata']
 
     df = df[column_order]
     
@@ -309,12 +309,12 @@ def extract_and_melt(URL, CAMPEONATO, ID_CAMPEONATO, CLASSE, COLUNAS, FLOTILHA=N
     options = Options()
     options.add_argument("--headless")
     
-    PATH_TO_CHROMEDRIVER = 'chromedriver-mac-x64/chromedriver'
-    
-    driver = Chrome(PATH_TO_CHROMEDRIVER, options=options)
-    driver.get(URL)
-    html = driver.page_source
+    # PATH_TO_CHROMEDRIVER = 'chromedriver-mac-x64/chromedriver'
+    # options.add_argument(PATH_TO_CHROMEDRIVER)
 
+    with Chrome(options=options) as browser:
+        browser.get(URL)
+        html = browser.page_source
     soup = BeautifulSoup(html, "html.parser")
     
     data = []
@@ -345,10 +345,10 @@ def extract_and_melt(URL, CAMPEONATO, ID_CAMPEONATO, CLASSE, COLUNAS, FLOTILHA=N
             value_vars = DIFFERENT_TABLE_COLUMNS[2:-1]
             print(value_vars)
             
-            df2 = pd.melt(df2, id_vars=id_vars, value_vars=value_vars)
+            df2 = pd.melt(df2, id_vars=id_vars, var_name="Regata", value_vars=value_vars)
             
             df2.rename(columns={'value': 'Pontuação Regata'}, inplace=True)
-            df2.drop('variable', axis=1, inplace=True)
+            # df2.drop('variable', axis=1, inplace=True)
             
             df2['Nett'] = df2['Pontuação Total']
             
@@ -403,11 +403,11 @@ def extract_and_melt(URL, CAMPEONATO, ID_CAMPEONATO, CLASSE, COLUNAS, FLOTILHA=N
         value_vars = COLUNAS[3:-2]
         print(value_vars)
     
-    df = pd.melt(df, id_vars=id_vars, value_vars=value_vars)
+    df = pd.melt(df, id_vars=id_vars, var_name="Regata", value_vars=value_vars)
     
     # rename column 'variable' to 'Flotilha'
     df.rename(columns={'value': 'Pontuação Regata'}, inplace=True)
-    df.drop('variable', axis=1, inplace=True)
+    # df.drop('variable', axis=1, inplace=True)
     
     df['Posição Geral'] = df['Posição Geral'].apply(rank_to_int)
     
@@ -428,6 +428,6 @@ def extract_and_melt(URL, CAMPEONATO, ID_CAMPEONATO, CLASSE, COLUNAS, FLOTILHA=N
     except:
         pass
     
-    df.to_excel(f'scraped-data/{CAMPEONATO}_{CLASSE}.xlsx', index=False)
+    # df.to_excel(f'scraped-data/{CAMPEONATO}_{CLASSE}.xlsx', index=False)
     
     return df
