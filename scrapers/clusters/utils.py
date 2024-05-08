@@ -193,7 +193,7 @@ def cluster9(reference: dict):
     """
     r = requests.get(reference['URL'])
     data = r.json()
-
+    
     extracted_data = {
         'Nome Competidor': [],
         'ID Competição': [],
@@ -206,12 +206,14 @@ def cluster9(reference: dict):
         'Pontuação Total': [],
         'Nett': [],
         'Nome Competição': [],
+        'Regata': []
     }
     
     data = data['EntryResults']
     
     for velejador in data:
         regatas = velejador['EntryRaceResults']
+        regata_count = 1
         for regata in regatas:
             extracted_data['Nome Competidor'].append(velejador['Name'] + velejador['Crew'])
             extracted_data['ID Competição'].append(reference['ID Competição'])
@@ -242,6 +244,8 @@ def cluster9(reference: dict):
             extracted_data['Pontuação Total'].append(velejador['TotalPoints'])
             extracted_data['Nett'].append(velejador['NetPoints'])
             extracted_data['Nome Competição'].append(reference['Nome Competição'])
+            extracted_data['Regata'].append(regata_count)
+            regata_count += 1
             
     extracted_data = pd.DataFrame(extracted_data)
     
@@ -250,8 +254,8 @@ def cluster9(reference: dict):
     extracted_data = extracted_data.dropna(subset=['Pontuação Regata'])
     extracted_data['Flotilha'] = extracted_data['Flotilha'].apply(rename_fleet_cluster9)
 
-    extracted_data.to_excel(f'../temp-scraped-data/{reference["Nome Competição"]}_{reference["Classe Vela"]}.xlsx', index=False)
-    extracted_data.to_excel(f'../scraped-data/{reference["Nome Competição"]}_{reference["Classe Vela"]}.xlsx', index=False)
+    # extracted_data.to_excel(f'../temp-scraped-data/{reference["Nome Competição"]}_{reference["Classe Vela"]}.xlsx', index=False)
+    # extracted_data.to_excel(f'../scraped-data/{reference["Nome Competição"]}_{reference["Classe Vela"]}.xlsx', index=False)
     
     return extracted_data
 
