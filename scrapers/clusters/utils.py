@@ -164,8 +164,8 @@ def cluster8(URL: str, PATH_TO_CHROMEDRIVER: str, NOME_COMPETICAO: str, ID_COMPE
     df_49er = df_49er[df_49er['Pontuação Regata'] != '']
     df_49erFX = df_49erFX[df_49erFX['Pontuação Regata'] != '']
     
-    df_49er.to_csv(f'../scraped-data/new_{NOME_COMPETICAO}_49er.csv', index=False)
-    df_49erFX.to_csv(f'../scraped-data/new_{NOME_COMPETICAO}_49erFX.csv', index=False)
+    df_49er.to_csv(f'../scraped-data-2024/c8/{NOME_COMPETICAO}_49er.csv', index=False)
+    df_49erFX.to_csv(f'../scraped-data-2024/c8/{NOME_COMPETICAO}_49erFX.csv', index=False)
     
     return df_49er, df_49erFX
 
@@ -255,7 +255,7 @@ def cluster9(reference: dict):
     extracted_data['Flotilha'] = extracted_data['Flotilha'].apply(rename_fleet_cluster9)
 
     # extracted_data.to_csv(f'../temp-scraped-data/new_{reference["Nome Competição"]}_{reference["Classe Vela"]}.csv', index=False)
-    extracted_data.to_csv(f'../scraped-data/new_{reference["Nome Competição"]}_{reference["Classe Vela"]}.csv', index=False)
+    extracted_data.to_csv(f'../scraped-data-2024/c9/{reference["Nome Competição"]}_{reference["Classe Vela"]}.csv', index=False)
     
     return extracted_data
 
