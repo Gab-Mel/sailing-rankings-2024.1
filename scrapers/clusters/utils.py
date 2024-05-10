@@ -164,8 +164,8 @@ def cluster8(URL: str, PATH_TO_CHROMEDRIVER: str, NOME_COMPETICAO: str, ID_COMPE
     df_49er = df_49er[df_49er['Pontuação Regata'] != '']
     df_49erFX = df_49erFX[df_49erFX['Pontuação Regata'] != '']
     
-    # df_49er.to_excel(f'scraped-data/{NOME_COMPETICAO}_49er.xlsx', index=False)
-    # df_49erFX.to_excel(f'scraped-data/{NOME_COMPETICAO}_49erFX.xlsx', index=False)
+    df_49er.to_csv(f'../scraped-data/new_{NOME_COMPETICAO}_49er.csv', index=False)
+    df_49erFX.to_csv(f'../scraped-data/new_{NOME_COMPETICAO}_49erFX.csv', index=False)
     
     return df_49er, df_49erFX
 
