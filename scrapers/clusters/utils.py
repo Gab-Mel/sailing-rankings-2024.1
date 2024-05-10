@@ -434,6 +434,6 @@ def extract_and_melt(URL, CAMPEONATO, ID_CAMPEONATO, CLASSE, COLUNAS, FLOTILHA=N
     except:
         pass
     
-    df.to_csv(f'../scraped-data/new_{CAMPEONATO}_{CLASSE}.csv', index=False)
+    df.to_csv(f'../scraped-data-2024/c2/{CAMPEONATO}_{CLASSE}.csv', index=False)
     
     return df
