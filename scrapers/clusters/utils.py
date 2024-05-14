@@ -152,10 +152,8 @@ def cluster8(URL: str, PATH_TO_CHROMEDRIVER: str, NOME_COMPETICAO: str, ID_COMPE
     
     if NOME_COMPETICAO == 'World Championship 2019':
         df_49er['Flotilha'] = df_49er['Flotilha'].apply(rename_fleet1_cluster8, args=('49er',))
-        df_49erFX['Flotilha'] = df_49erFX['Flotilha'].apply(rename_fleet1_cluster8, args=('49erFX',))
     elif NOME_COMPETICAO == 'World Championship 2020':
         df_49er['Flotilha'] = df_49er['Flotilha'].apply(rename_fleet2_cluster8, args=('49er',))
-        df_49erFX['Flotilha'] = df_49erFX['Flotilha'].apply(rename_fleet2_cluster8, args=('49erFX',))
     elif NOME_COMPETICAO == 'European Championship 2021':
         df_49er['Flotilha'] = df_49er['Flotilha'].apply(rename_fleet3_cluster8, args=('49er',))
         df_49erFX['Flotilha'] = df_49erFX['Flotilha'].apply(rename_fleet3_cluster8, args=('49erFX',))
@@ -168,6 +166,56 @@ def cluster8(URL: str, PATH_TO_CHROMEDRIVER: str, NOME_COMPETICAO: str, ID_COMPE
     df_49erFX.to_csv(f'../scraped-data-2024/c8/{NOME_COMPETICAO}_49erFX.csv', index=False)
     
     return df_49er, df_49erFX
+
+
+def cluster8_nacra(URL: str, NOME_COMPETICAO: str, DRIVER):
+    DRIVER.get(URL)
+    html = DRIVER.page_source
+    
+    soup = BeautifulSoup(html, 'html.parser')
+    
+    for table in soup.find_all('table'):
+        data_49er = iter_rows(table)
+            
+    df_49er = pd.DataFrame(data_49er[1:])
+    
+    columns = ['Posição Geral', 'Sail Number', 'Nome Competidor', 'Nett', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 
+              'Q7', 'Q8', 'Q9', 'Q10', 'Q11', 'Q12', 'Q13', 'Q14', 'Q15', 'Q16', 'Q17', 'Pontuação Total']
+    
+    df_49er.columns = columns
+    
+    df_49er.drop('Sail Number', axis=1, inplace=True)
+    
+    df_49er = pd.melt(df_49er, id_vars=['Posição Geral', 'Nome Competidor', 'Nett', 'Pontuação Total'],
+                      value_vars=['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8',
+                                  'Q9', 'Q10', 'Q11', 'Q12', 'Q13', 'Q14', 'Q15', 'Q16', 'Q17'])
+    
+    df_49er.rename(columns={'variable': 'Flotilha', 'value': 'Pontuação Regata'}, inplace=True)
+    df_49er["Regata"] = df_49er["Flotilha"]
+    
+    df_49er['Nome Competição'] = [NOME_COMPETICAO] * len(df_49er)
+    
+    df_49er['ID Competição'] = ''
+    
+    df_49er['Classe Vela'] = ['Nacra17'] * len(df_49er)
+    
+    df_49er['Punição'] = [''] * len(df_49er)
+    
+    column_order = ['Nome Competidor', 'ID Competição', 'Classe Vela',
+                    'Pontuação Regata', 'Flotilha', 'Posição Geral', 
+                    'Punição', 'Pontuação Total', 'Nett', 'Nome Competição', 'Regata']
+    
+    df_49er = df_49er[column_order]
+    
+    df_49er['Flotilha'] = df_49er['Flotilha'].apply(rename_fleet1_cluster8, args=('49er',))
+        
+    # drop rows where 'Pontuação Regata' is ''
+    df_49er = df_49er[df_49er['Pontuação Regata'] != '']
+    
+    df_49er.to_csv(f'../scraped-data-2024/c8/{NOME_COMPETICAO}_nacra17.csv', index=False)
+    
+    return df_49er
+
 
 #################################################
 ################### CLUSTER 9 ###################
