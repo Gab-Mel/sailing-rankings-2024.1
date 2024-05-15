@@ -1,4 +1,4 @@
-from sqlalchemy import Column, String, Integer, DateTime, ForeignKey
+from sqlalchemy import Column, String, Integer, DateTime, ForeignKey, Numeric
 from sqlalchemy.sql import func
 from sqlalchemy.orm import relationship
 from database import Base
@@ -18,6 +18,7 @@ class RankingModel(Base):
     
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
+    score = Column(Numeric, index=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
 
 class QuestionModel(Base):

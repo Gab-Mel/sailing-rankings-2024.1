@@ -3,7 +3,7 @@ from fastapi import FastAPI, Depends, HTTPException
 from database import load_database, load_session
 from nlp import generate_questions
 from models import DocumentModel, QuestionModel, RankingModel
-from select_xml import select_xml
+from select_xml import retun_xlsx
 from pydantic import BaseModel
 from sqlalchemy.orm import Session, joinedload
 from fastapi.middleware.cors import CORSMiddleware
@@ -40,19 +40,20 @@ class CreateRankingModel(BaseModel):
     
 @app.post("/ranking", status_code=201)
 async def create_ranking(listRanking = None, db: Session = Depends(load_session)):
-    listRanking = select_xml()
+    listRanking = retun_xlsx()
     for i in range(len(listRanking)):
-        document = RankingModel(name=listRanking['Nome Competição'].iloc[i])
+        document = RankingModel(name=listRanking['Unnamed: 0'][i], score = listRanking['Rating'][i])
         db.add(document)
         db.commit()
+        #db.refresh(document)
 
 @app.get("/documents")
 async def get_documents(db: Session = Depends(load_session)):
     return db.query(DocumentModel).all()
 
 @app.get("/ranking")
-async def get_ranking():
-    return 
+async def get_ranking(db: Session = Depends(load_session)):
+    return db.query(RankingModel).all()
 
 @app.get("/documents/{document_id}")
 async def get_document(document_id: int, db: Session = Depends(load_session)):
