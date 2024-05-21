@@ -94,7 +94,9 @@ export const getStaticProps: GetStaticProps = async (context) => {
         rankings: rankingsh.map((ranking) => ({
           id: ranking.id,
           name: ranking.name,
-          score: ranking.score
+          score: ranking.score,
+          ano: ranking.ano,
+          classe: ranking.classe,
         })),
       },
       revalidate: 1,

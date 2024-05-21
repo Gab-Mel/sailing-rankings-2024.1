@@ -12,6 +12,8 @@ export interface IDocumentModel {
 export interface IRankingModel {
   id: number;
   name: string;
+  ano: number;
+  classe: string;
   score: number;
 }
 

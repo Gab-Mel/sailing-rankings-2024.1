@@ -31,7 +31,7 @@ export default function NewRankingPage() {
   return (
     <>
       <Head>
-        <title>Novo texto | Cats are liquid!</title>
+        <title>Upgrade Database!</title>
       </Head>
 
       <Container p={4} maxW="container.md">

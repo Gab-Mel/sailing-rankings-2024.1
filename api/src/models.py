@@ -13,13 +13,47 @@ class DocumentModel(Base):
     questions = relationship("QuestionModel", back_populates="document", lazy="joined")
     created_at = Column(DateTime(timezone=True), server_default=func.now())
     
-class RankingModel(Base):
-    __tablename__ = "ranking"
+class AtletaModel(Base):
+    __tablename__ = "atletas"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    
+class CompeticaoModel(Base):
+    __tablename__ = "competicoes"
+
+    id = Column(Integer, primary_key=True, index=True)
+    name = Column(String, index=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    
+class final_dataModel(Base):
+    __tablename__ = "final_data"
+
+    id = Column(Integer, primary_key=True, index=True)
+    id_atleta = Column(Integer, ForeignKey("atletas.id"))
+    id_competicao = Column(Integer, ForeignKey("competicoes.id"))
+    classe_vela = Column(String, index=True)
+    pontuacao_regata = Column(Integer, index=True)
+    descarte = Column(Integer, index=True)
+    flotilha = Column(String, index=True)
+    posicao = Column(Integer, index=True)
+    punicao = Column(String, index=True)
+    pontuacao_total = Column(Numeric, index=True)
+    nett = Column(Integer, index=True)
+    created_at = Column(DateTime(timezone=True), server_default=func.now())
+    
+class RankingEloModel(Base):
+    __tablename__ = "ranking_elo"
     
     id = Column(Integer, primary_key=True, index=True)
     name = Column(String, index=True)
     score = Column(Numeric, index=True)
+    classe = Column(String, index=True)
+    ano = Column(Integer, index=True)
     created_at = Column(DateTime(timezone=True), server_default=func.now())
+    
+
 
 class QuestionModel(Base):
     __tablename__ = "questions"
