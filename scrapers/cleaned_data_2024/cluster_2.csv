@@ -2820,7 +2820,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,WACHHOLZ FORREST,6.0,Ilca 7,30.0,0,B,23,0,317.0,213.0,European Championship 2023 - Bronze Fleet,F3
 ,,JANULIONIS RADVILAS,6.0,Ilca 7,4.0,0,B,24,0,349.0,223.0,European Championship 2023 - Bronze Fleet,F3
 ,,ANSTEY LUKE,6.0,Ilca 7,8.0,0,B,25,0,339.0,225.0,European Championship 2023 - Bronze Fleet,F3
-,,ALCALAY YOGEV,6.0,Ilca 7,34.0,0,B,26,MSCP,353.0,227.0,European Championship 2023 - Bronze Fleet,F3
+,,ALCALAY YOGEV,6.0,Ilca 7,34.0,1,B,26,MSCP,353.0,227.0,European Championship 2023 - Bronze Fleet,F3
 ,,MICHALAK MILOSZ,6.0,Ilca 7,16.0,0,B,27,0,325.0,227.0,European Championship 2023 - Bronze Fleet,F3
 ,,BROWN ALASTAIR,6.0,Ilca 7,18.0,0,B,28,0,345.0,240.0,European Championship 2023 - Bronze Fleet,F3
 ,,LIBRI EDOARDO,6.0,Ilca 7,63.0,0,B,29,bfd,360.0,243.0,European Championship 2023 - Bronze Fleet,F3
@@ -2829,7 +2829,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,FRACASSI ALESSANDRO,6.0,Ilca 7,24.0,0,B,32,0,348.0,251.0,European Championship 2023 - Bronze Fleet,F3
 ,,BEKS STIJN,6.0,Ilca 7,63.0,1,B,33,DNC,370.0,256.0,European Championship 2023 - Bronze Fleet,F3
 ,,VAN ROOMEN TIMO,6.0,Ilca 7,11.0,0,B,34,0,363.0,258.0,European Championship 2023 - Bronze Fleet,F3
-,,DEN TEX CORNELIS,6.0,Ilca 7,24.0,0,B,35,MSCP,384.0,262.0,European Championship 2023 - Bronze Fleet,F3
+,,DEN TEX CORNELIS,6.0,Ilca 7,24.0,1,B,35,MSCP,384.0,262.0,European Championship 2023 - Bronze Fleet,F3
 ,,VERON PAUL,6.0,Ilca 7,9.0,0,B,36,0,402.0,276.0,European Championship 2023 - Bronze Fleet,F3
 ,,DE PAULI GIOVANNI,6.0,Ilca 7,31.0,0,B,37,0,381.0,278.0,European Championship 2023 - Bronze Fleet,F3
 ,,SECHI CLAUDIO,6.0,Ilca 7,41.0,0,B,38,0,435.0,318.0,European Championship 2023 - Bronze Fleet,F3
@@ -4660,7 +4660,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,PORTOLOU VARVARA,6.0,Ilca 6,22.0,0,P,43,0,409.0,302.0,European Championship 2023 - Silver Fleet,F1
 ,,JORDAN AGUSTINA,6.0,Ilca 6,50.0,1,P,44,0,422.0,321.0,European Championship 2023 - Silver Fleet,F1
 ,,HARTENBERGER ELISA,6.0,Ilca 6,23.0,0,P,45,0,429.0,325.0,European Championship 2023 - Silver Fleet,F1
-,,MIRZAI ELLA,6.0,Ilca 6,34.0,0,P,46,FLSCP,440.0,334.0,European Championship 2023 - Silver Fleet,F1
+,,MIRZAI ELLA,6.0,Ilca 6,34.0,1,P,46,FLSCP,440.0,334.0,European Championship 2023 - Silver Fleet,F1
 ,,AQUILINA LACEY,6.0,Ilca 6,36.0,0,P,47,0,452.0,342.0,European Championship 2023 - Silver Fleet,F1
 ,,MOHAMAD LATIF NUR ALIA AMERA,6.0,Ilca 6,34.0,0,P,48,0,451.0,342.0,European Championship 2023 - Silver Fleet,F1
 ,,GUARAGNA NICOL,6.0,Ilca 6,44.0,0,P,49,0,452.0,347.0,European Championship 2023 - Silver Fleet,F1
@@ -4747,7 +4747,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,OHRNELL JENNIFER,6.0,Ilca 6,11.0,0,P,18,0,331.0,217.0,European Championship 2023 - Silver Fleet,F3
 ,,MARTINEZ SHEILA,6.0,Ilca 6,20.0,0,P,19,0,318.0,231.0,European Championship 2023 - Silver Fleet,F3
 ,,LUBAC THEA,6.0,Ilca 6,24.0,0,P,20,0,326.0,233.0,European Championship 2023 - Silver Fleet,F3
-,,MARTINEZ MARIA,6.0,Ilca 6,34.0,0,P,21,MSCP,317.0,233.0,European Championship 2023 - Silver Fleet,F3
+,,MARTINEZ MARIA,6.0,Ilca 6,34.0,1,P,21,MSCP,317.0,233.0,European Championship 2023 - Silver Fleet,F3
 ,,VALENCIC ALENKA,6.0,Ilca 6,31.0,0,P,22,0,339.0,234.0,European Championship 2023 - Silver Fleet,F3
 ,,VYNOHRADOVA YELYZAVETA,6.0,Ilca 6,40.0,0,P,23,0,347.0,239.0,European Championship 2023 - Silver Fleet,F3
 ,,RADULIC MAILYS,6.0,Ilca 6,38.0,0,P,24,0,344.0,240.0,European Championship 2023 - Silver Fleet,F3
@@ -4764,7 +4764,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,PAPENTHIN GESA,6.0,Ilca 6,21.0,0,P,35,0,375.0,277.0,European Championship 2023 - Silver Fleet,F3
 ,,ARIKAN OKYANUS,6.0,Ilca 6,9.0,0,P,36,0,382.0,280.0,European Championship 2023 - Silver Fleet,F3
 ,,HABERLAND HENRIETTE,6.0,Ilca 6,35.0,0,P,37,0,389.0,286.0,European Championship 2023 - Silver Fleet,F3
-,,IUORIO ALINA,6.0,Ilca 6,57.0,0,P,38,MSCP,405.0,291.0,European Championship 2023 - Silver Fleet,F3
+,,IUORIO ALINA,6.0,Ilca 6,57.0,1,P,38,MSCP,405.0,291.0,European Championship 2023 - Silver Fleet,F3
 ,,CARLES-TOLRA MIRIAM,6.0,Ilca 6,28.0,0,P,39,0,395.0,291.0,European Championship 2023 - Silver Fleet,F3
 ,,SEGNINI NICOL,6.0,Ilca 6,30.0,0,P,40,0,393.0,296.0,European Championship 2023 - Silver Fleet,F3
 ,,PERELLO MARGA,6.0,Ilca 6,57.0,1,P,41,bfd,404.0,298.0,European Championship 2023 - Silver Fleet,F3
@@ -5815,7 +5815,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,PILAR LAMADRID-TRUEBA,11.0,IQFOIL Fem,4.0,0,G,4,0,134.0,85.0,World Championship 2021,Q5
 ,,SHACHAR RESHEF,11.0,IQFOIL Fem,2.0,0,G,5,0,119.0,57.0,World Championship 2021,Q5
 ,,DELPHINE COUSIN,11.0,IQFOIL Fem,8.0,0,G,6,0,231.0,115.0,World Championship 2021,Q5
-,,LUCIE BELBEOCH,11.0,IQFOIL Fem,6.9,0,G,7,RDG,313.6,94.6,World Championship 2021,Q5
+,,LUCIE BELBEOCH,11.0,IQFOIL Fem,6.9,1,G,7,RDG,313.6,94.6,World Championship 2021,Q5
 ,,HELLE OPPEDAL,11.0,IQFOIL Fem,13.0,0,G,8,0,199.0,123.0,World Championship 2021,Q5
 ,,SHARON KANTOR,11.0,IQFOIL Fem,12.0,0,G,9,0,219.0,126.0,World Championship 2021,Q5
 ,,MAJA DZIARNOWSKA,11.0,IQFOIL Fem,10.0,0,G,10,0,177.0,104.0,World Championship 2021,Q5
@@ -5887,7 +5887,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,PILAR LAMADRID-TRUEBA,11.0,IQFOIL Fem,7.0,0,G,4,0,134.0,85.0,World Championship 2021,Q6
 ,,SHACHAR RESHEF,11.0,IQFOIL Fem,2.0,0,G,5,0,119.0,57.0,World Championship 2021,Q6
 ,,DELPHINE COUSIN,11.0,IQFOIL Fem,13.0,0,G,6,0,231.0,115.0,World Championship 2021,Q6
-,,LUCIE BELBEOCH,11.0,IQFOIL Fem,6.9,0,G,7,RDG,313.6,94.6,World Championship 2021,Q6
+,,LUCIE BELBEOCH,11.0,IQFOIL Fem,6.9,1,G,7,RDG,313.6,94.6,World Championship 2021,Q6
 ,,HELLE OPPEDAL,11.0,IQFOIL Fem,12.0,0,G,8,0,199.0,123.0,World Championship 2021,Q6
 ,,SHARON KANTOR,11.0,IQFOIL Fem,6.0,0,G,9,0,219.0,126.0,World Championship 2021,Q6
 ,,MAJA DZIARNOWSKA,11.0,IQFOIL Fem,32.0,1,G,10,0,177.0,104.0,World Championship 2021,Q6
@@ -6031,7 +6031,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,PILAR LAMADRID-TRUEBA,11.0,IQFOIL Fem,5.0,0,G,4,0,134.0,85.0,World Championship 2021,Q8
 ,,SHACHAR RESHEF,11.0,IQFOIL Fem,2.0,0,G,5,0,119.0,57.0,World Championship 2021,Q8
 ,,DELPHINE COUSIN,11.0,IQFOIL Fem,12.0,0,G,6,0,231.0,115.0,World Championship 2021,Q8
-,,LUCIE BELBEOCH,11.0,IQFOIL Fem,6.9,0,G,7,RDG,313.6,94.6,World Championship 2021,Q8
+,,LUCIE BELBEOCH,11.0,IQFOIL Fem,6.9,1,G,7,RDG,313.6,94.6,World Championship 2021,Q8
 ,,HELLE OPPEDAL,11.0,IQFOIL Fem,24.0,1,G,8,0,199.0,123.0,World Championship 2021,Q8
 ,,SHARON KANTOR,11.0,IQFOIL Fem,9.0,0,G,9,0,219.0,126.0,World Championship 2021,Q8
 ,,MAJA DZIARNOWSKA,11.0,IQFOIL Fem,4.0,0,G,10,0,177.0,104.0,World Championship 2021,Q8
@@ -6103,7 +6103,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,PILAR LAMADRID-TRUEBA,11.0,IQFOIL Fem,12.0,0,G,4,0,134.0,85.0,World Championship 2021,Q9
 ,,SHACHAR RESHEF,11.0,IQFOIL Fem,4.0,0,G,5,0,119.0,57.0,World Championship 2021,Q9
 ,,DELPHINE COUSIN,11.0,IQFOIL Fem,11.0,0,G,6,0,231.0,115.0,World Championship 2021,Q9
-,,LUCIE BELBEOCH,11.0,IQFOIL Fem,6.9,0,G,7,RDG,313.6,94.6,World Championship 2021,Q9
+,,LUCIE BELBEOCH,11.0,IQFOIL Fem,6.9,1,G,7,RDG,313.6,94.6,World Championship 2021,Q9
 ,,HELLE OPPEDAL,11.0,IQFOIL Fem,23.0,0,G,8,0,199.0,123.0,World Championship 2021,Q9
 ,,SHARON KANTOR,11.0,IQFOIL Fem,7.0,0,G,9,0,219.0,126.0,World Championship 2021,Q9
 ,,MAJA DZIARNOWSKA,11.0,IQFOIL Fem,5.0,0,G,10,0,177.0,104.0,World Championship 2021,Q9
@@ -6601,19 +6601,19 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,GHISLAINE VAN-EMPEL,11.0,IQFOIL Fem,66.0,0,G,70,0,975.0,764.0,World Championship 2021,Q15
 ,,ELENA SANDERA,11.0,IQFOIL Fem,73.0,1,G,71,DNC,994.0,775.0,World Championship 2021,Q15
 ,,NADIA JABLONSKI,11.0,IQFOIL Fem,67.0,0,G,72,0,"1,001.0",784.0,World Championship 2021,Q15
-,,HELENE NOESMOEN,11.0,IQFOIL Fem,0.0,0,G,1,0,17.1,12.0,World Championship 2021,Q16
-,,ISLAY WATSON,11.0,IQFOIL Fem,0.0,0,G,2,0,66.0,35.0,World Championship 2021,Q16
-,,SASKIA SILLS,11.0,IQFOIL Fem,0.0,0,G,3,0,104.0,49.0,World Championship 2021,Q16
-,,PILAR LAMADRID-TRUEBA,11.0,IQFOIL Fem,0.0,0,G,4,0,134.0,85.0,World Championship 2021,Q16
-,,SHACHAR RESHEF,11.0,IQFOIL Fem,0.0,0,G,5,0,119.0,57.0,World Championship 2021,Q16
-,,DELPHINE COUSIN,11.0,IQFOIL Fem,0.0,0,G,6,0,231.0,115.0,World Championship 2021,Q16
-,,LUCIE BELBEOCH,11.0,IQFOIL Fem,0.0,0,G,7,0,313.6,94.6,World Championship 2021,Q16
-,,HELLE OPPEDAL,11.0,IQFOIL Fem,0.0,0,G,8,0,199.0,123.0,World Championship 2021,Q16
-,,SHARON KANTOR,11.0,IQFOIL Fem,0.0,0,G,9,0,219.0,126.0,World Championship 2021,Q16
-,,MAJA DZIARNOWSKA,11.0,IQFOIL Fem,0.0,0,G,10,0,177.0,104.0,World Championship 2021,Q16
-,,PALMA CARGO,11.0,IQFOIL Fem,0.0,0,G,11,0,235.0,105.0,World Championship 2021,Q16
-,,LOLA SORIN,11.0,IQFOIL Fem,0.0,0,G,12,0,182.0,76.0,World Championship 2021,Q16
-,,LENA ERDIL,11.0,IQFOIL Fem,0.0,0,G,13,0,241.5,146.5,World Championship 2021,Q16
+,,HELENE NOESMOEN,11.0,IQFOIL Fem,0.0,1,G,1,0,17.1,12.0,World Championship 2021,Q16
+,,ISLAY WATSON,11.0,IQFOIL Fem,0.0,1,G,2,0,66.0,35.0,World Championship 2021,Q16
+,,SASKIA SILLS,11.0,IQFOIL Fem,0.0,1,G,3,0,104.0,49.0,World Championship 2021,Q16
+,,PILAR LAMADRID-TRUEBA,11.0,IQFOIL Fem,0.0,1,G,4,0,134.0,85.0,World Championship 2021,Q16
+,,SHACHAR RESHEF,11.0,IQFOIL Fem,0.0,1,G,5,0,119.0,57.0,World Championship 2021,Q16
+,,DELPHINE COUSIN,11.0,IQFOIL Fem,0.0,1,G,6,0,231.0,115.0,World Championship 2021,Q16
+,,LUCIE BELBEOCH,11.0,IQFOIL Fem,0.0,1,G,7,0,313.6,94.6,World Championship 2021,Q16
+,,HELLE OPPEDAL,11.0,IQFOIL Fem,0.0,1,G,8,0,199.0,123.0,World Championship 2021,Q16
+,,SHARON KANTOR,11.0,IQFOIL Fem,0.0,1,G,9,0,219.0,126.0,World Championship 2021,Q16
+,,MAJA DZIARNOWSKA,11.0,IQFOIL Fem,0.0,1,G,10,0,177.0,104.0,World Championship 2021,Q16
+,,PALMA CARGO,11.0,IQFOIL Fem,0.0,1,G,11,0,235.0,105.0,World Championship 2021,Q16
+,,LOLA SORIN,11.0,IQFOIL Fem,0.0,1,G,12,0,182.0,76.0,World Championship 2021,Q16
+,,LENA ERDIL,11.0,IQFOIL Fem,0.0,1,G,13,0,241.5,146.5,World Championship 2021,Q16
 ,,MANON PIANAZZA,11.0,IQFOIL Fem,6.0,0,G,14,0,257.0,166.0,World Championship 2021,Q16
 ,,IMOGEN SILLS,11.0,IQFOIL Fem,5.0,0,G,15,0,295.5,167.5,World Championship 2021,Q16
 ,,SARA WENNEKES,11.0,IQFOIL Fem,1.0,0,G,16,0,276.0,171.0,World Championship 2021,Q16
@@ -6673,19 +6673,19 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,GHISLAINE VAN-EMPEL,11.0,IQFOIL Fem,16.0,0,G,70,0,975.0,764.0,World Championship 2021,Q16
 ,,ELENA SANDERA,11.0,IQFOIL Fem,18.0,0,G,71,0,994.0,775.0,World Championship 2021,Q16
 ,,NADIA JABLONSKI,11.0,IQFOIL Fem,12.0,0,G,72,0,"1,001.0",784.0,World Championship 2021,Q16
-,,HELENE NOESMOEN,11.0,IQFOIL Fem,0.0,0,G,1,0,17.1,12.0,World Championship 2021,Q17
-,,ISLAY WATSON,11.0,IQFOIL Fem,0.0,0,G,2,0,66.0,35.0,World Championship 2021,Q17
-,,SASKIA SILLS,11.0,IQFOIL Fem,0.0,0,G,3,0,104.0,49.0,World Championship 2021,Q17
-,,PILAR LAMADRID-TRUEBA,11.0,IQFOIL Fem,0.0,0,G,4,0,134.0,85.0,World Championship 2021,Q17
-,,SHACHAR RESHEF,11.0,IQFOIL Fem,0.0,0,G,5,0,119.0,57.0,World Championship 2021,Q17
-,,DELPHINE COUSIN,11.0,IQFOIL Fem,0.0,0,G,6,0,231.0,115.0,World Championship 2021,Q17
-,,LUCIE BELBEOCH,11.0,IQFOIL Fem,0.0,0,G,7,0,313.6,94.6,World Championship 2021,Q17
-,,HELLE OPPEDAL,11.0,IQFOIL Fem,0.0,0,G,8,0,199.0,123.0,World Championship 2021,Q17
-,,SHARON KANTOR,11.0,IQFOIL Fem,0.0,0,G,9,0,219.0,126.0,World Championship 2021,Q17
-,,MAJA DZIARNOWSKA,11.0,IQFOIL Fem,0.0,0,G,10,0,177.0,104.0,World Championship 2021,Q17
-,,PALMA CARGO,11.0,IQFOIL Fem,0.0,0,G,11,0,235.0,105.0,World Championship 2021,Q17
-,,LOLA SORIN,11.0,IQFOIL Fem,0.0,0,G,12,0,182.0,76.0,World Championship 2021,Q17
-,,LENA ERDIL,11.0,IQFOIL Fem,0.0,0,G,13,0,241.5,146.5,World Championship 2021,Q17
+,,HELENE NOESMOEN,11.0,IQFOIL Fem,0.0,1,G,1,0,17.1,12.0,World Championship 2021,Q17
+,,ISLAY WATSON,11.0,IQFOIL Fem,0.0,1,G,2,0,66.0,35.0,World Championship 2021,Q17
+,,SASKIA SILLS,11.0,IQFOIL Fem,0.0,1,G,3,0,104.0,49.0,World Championship 2021,Q17
+,,PILAR LAMADRID-TRUEBA,11.0,IQFOIL Fem,0.0,1,G,4,0,134.0,85.0,World Championship 2021,Q17
+,,SHACHAR RESHEF,11.0,IQFOIL Fem,0.0,1,G,5,0,119.0,57.0,World Championship 2021,Q17
+,,DELPHINE COUSIN,11.0,IQFOIL Fem,0.0,1,G,6,0,231.0,115.0,World Championship 2021,Q17
+,,LUCIE BELBEOCH,11.0,IQFOIL Fem,0.0,1,G,7,0,313.6,94.6,World Championship 2021,Q17
+,,HELLE OPPEDAL,11.0,IQFOIL Fem,0.0,1,G,8,0,199.0,123.0,World Championship 2021,Q17
+,,SHARON KANTOR,11.0,IQFOIL Fem,0.0,1,G,9,0,219.0,126.0,World Championship 2021,Q17
+,,MAJA DZIARNOWSKA,11.0,IQFOIL Fem,0.0,1,G,10,0,177.0,104.0,World Championship 2021,Q17
+,,PALMA CARGO,11.0,IQFOIL Fem,0.0,1,G,11,0,235.0,105.0,World Championship 2021,Q17
+,,LOLA SORIN,11.0,IQFOIL Fem,0.0,1,G,12,0,182.0,76.0,World Championship 2021,Q17
+,,LENA ERDIL,11.0,IQFOIL Fem,0.0,1,G,13,0,241.5,146.5,World Championship 2021,Q17
 ,,MANON PIANAZZA,11.0,IQFOIL Fem,3.0,0,G,14,0,257.0,166.0,World Championship 2021,Q17
 ,,IMOGEN SILLS,11.0,IQFOIL Fem,5.5,0,G,15,RDGslm,295.5,167.5,World Championship 2021,Q17
 ,,SARA WENNEKES,11.0,IQFOIL Fem,1.0,0,G,16,0,276.0,171.0,World Championship 2021,Q17
@@ -6937,7 +6937,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,NICOLAS PRIEN,11.0,IQFOIL Masc,17.0,0,O,33,0,420.0,278.0,World Championship 2021,Q2
 ,,FABIEN PIANAZZA,11.0,IQFOIL Masc,13.0,0,O,34,0,410.0,284.0,World Championship 2021,Q2
 ,,PAWEL TARNOWSKI,11.0,IQFOIL Masc,10.0,0,O,35,0,453.5,302.5,World Championship 2021,Q2
-,,STEVEN VAN-BROECKHOVEN,11.0,IQFOIL Masc,26.6,0,O,36,RDG,447.6,303.6,World Championship 2021,Q2
+,,STEVEN VAN-BROECKHOVEN,11.0,IQFOIL Masc,26.6,1,O,36,RDG,447.6,303.6,World Championship 2021,Q2
 ,,BENJAMIN TILLIER,11.0,IQFOIL Masc,9.0,0,O,37,0,491.0,311.0,World Championship 2021,Q2
 ,,TOMAS VIEITO-COBIN,11.0,IQFOIL Masc,28.0,0,O,38,0,457.0,319.0,World Championship 2021,Q2
 ,,YOAV OMER,11.0,IQFOIL Masc,19.0,0,O,39,0,446.0,322.0,World Championship 2021,Q2
@@ -7085,7 +7085,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,YUN POULIQUEN,11.0,IQFOIL Masc,21.0,0,O,24,0,319.0,193.0,World Championship 2021,Q3
 ,,ETHAN WESTERA,11.0,IQFOIL Masc,8.0,0,O,25,0,301.0,205.0,World Championship 2021,Q3
 ,,ALEXANDRE COUSIN,11.0,IQFOIL Masc,25.0,0,O,26,0,435.0,218.0,World Championship 2021,Q3
-,,LUCA DI-TOMASSI,11.0,IQFOIL Masc,11.2,0,O,27,RDG,307.2,220.2,World Championship 2021,Q3
+,,LUCA DI-TOMASSI,11.0,IQFOIL Masc,11.2,1,O,27,RDG,307.2,220.2,World Championship 2021,Q3
 ,,OEL POULIQUEN,11.0,IQFOIL Masc,14.0,0,O,28,0,337.0,235.0,World Championship 2021,Q3
 ,,MATHURIN JOLIVET,11.0,IQFOIL Masc,14.0,0,O,29,0,395.0,244.0,World Championship 2021,Q3
 ,,MATTEO IACHINO,11.0,IQFOIL Masc,27.0,0,O,30,0,402.0,254.0,World Championship 2021,Q3
@@ -7147,7 +7147,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,JULIAN JORDAN,11.0,IQFOIL Masc,54.0,0,P,86,0,,,World Championship 2021,Q3
 ,,LARS POGGEMANN,11.0,IQFOIL Masc,56.0,1,P,87,0,,,World Championship 2021,Q3
 ,,MALIK HOVELING,11.0,IQFOIL Masc,48.0,0,P,88,0,,,World Championship 2021,Q3
-,,LEONIDAS TSORTANIDIS,11.0,IQFOIL Masc,45.8,0,P,89,RDG,,,World Championship 2021,Q3
+,,LEONIDAS TSORTANIDIS,11.0,IQFOIL Masc,45.8,1,P,89,RDG,,,World Championship 2021,Q3
 ,,MICHAL POLAK,11.0,IQFOIL Masc,30.0,0,P,90,0,,,World Championship 2021,Q3
 ,,KENSEI IKEDA,11.0,IQFOIL Masc,55.0,1,P,91,0,,,World Championship 2021,Q3
 ,,HIDDE VAN-DER-MEER,11.0,IQFOIL Masc,44.0,0,P,92,0,,,World Championship 2021,Q3
@@ -7233,7 +7233,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,TOM ARNOUX,11.0,IQFOIL Masc,3.0,0,O,15,0,229.0,147.0,World Championship 2021,Q4
 ,,MAX CASTELEIN,11.0,IQFOIL Masc,2.0,0,O,16,0,312.0,151.0,World Championship 2021,Q4
 ,,TITOUAN LE-BOSQ,11.0,IQFOIL Masc,8.0,0,O,17,0,325.0,154.0,World Championship 2021,Q4
-,,AMADO VRIESWIJK,11.0,IQFOIL Masc,5.8,0,O,18,RDG,269.8,156.8,World Championship 2021,Q4
+,,AMADO VRIESWIJK,11.0,IQFOIL Masc,5.8,1,O,18,RDG,269.8,156.8,World Championship 2021,Q4
 ,,MATEUS ISAAC,11.0,IQFOIL Masc,17.0,0,O,19,0,299.0,163.0,World Championship 2021,Q4
 ,,MACIEK RUTKOWSKI,11.0,IQFOIL Masc,24.0,1,O,20,0,241.0,169.0,World Championship 2021,Q4
 ,,LOUIS PIGNOLET,11.0,IQFOIL Masc,10.0,0,O,21,0,334.0,177.0,World Championship 2021,Q4
@@ -7285,7 +7285,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,BAZ-SHLOMO BEL,11.0,IQFOIL Masc,15.0,0,O,67,0,647.0,465.0,World Championship 2021,Q4
 ,,JOAN-CARLES CARDONA-BOCARANDO,11.0,IQFOIL Masc,21.0,0,O,68,0,648.0,471.0,World Championship 2021,Q4
 ,,ANTONINO CANGEMI,11.0,IQFOIL Masc,35.0,1,O,69,0,684.0,493.0,World Championship 2021,Q4
-,,FLORIS FRANKEN,11.0,IQFOIL Masc,34.4,0,O,70,RDG,695.4,499.4,World Championship 2021,Q4
+,,FLORIS FRANKEN,11.0,IQFOIL Masc,34.4,1,O,70,RDG,695.4,499.4,World Championship 2021,Q4
 ,,ROI HILLEL,11.0,IQFOIL Masc,42.0,0,O,71,0,682.0,506.0,World Championship 2021,Q4
 ,,BERNAT TOMAS,11.0,IQFOIL Masc,34.0,0,O,72,0,711.0,506.0,World Championship 2021,Q4
 ,,BENOAT MERCEUR,11.0,IQFOIL Masc,37.0,0,O,73,0,714.0,513.0,World Championship 2021,Q4
@@ -7324,14 +7324,14 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,KAS DE-WOLF,11.0,IQFOIL Masc,54.0,0,P,106,0,,,World Championship 2021,Q4
 ,,VLADISLAV BURMISTRENKO,11.0,IQFOIL Masc,50.0,0,P,107,0,,,World Championship 2021,Q4
 ,,OFEK ELIMELEH,11.0,IQFOIL Masc,40.0,0,P,108,0,,,World Championship 2021,Q4
-,,ANAMI TOMONORI,11.0,IQFOIL Masc,53.0,0,P,109,RDG,,,World Championship 2021,Q4
+,,ANAMI TOMONORI,11.0,IQFOIL Masc,53.0,1,P,109,RDG,,,World Championship 2021,Q4
 ,,PETER NORS,11.0,IQFOIL Masc,43.0,0,P,110,0,,,World Championship 2021,Q4
 ,,MATEO BORS,11.0,IQFOIL Masc,37.0,0,P,111,0,,,World Championship 2021,Q4
 ,,BENCE SANTA,11.0,IQFOIL Masc,60.0,0,P,112,0,,,World Championship 2021,Q4
 ,,TIAGO ABREU,11.0,IQFOIL Masc,59.0,0,P,113,0,,,World Championship 2021,Q4
 ,,ALEXANDROS KALPOGIANNAKIS,11.0,IQFOIL Masc,49.0,0,P,114,0,,,World Championship 2021,Q4
 ,,EVGENII GALITSKII,11.0,IQFOIL Masc,57.0,0,P,115,0,,,World Championship 2021,Q4
-,,LOK YEUNG,11.0,IQFOIL Masc,50.8,0,P,116,RDG,,,World Championship 2021,Q4
+,,LOK YEUNG,11.0,IQFOIL Masc,50.8,1,P,116,RDG,,,World Championship 2021,Q4
 ,,MATS VON-HOLTEN,11.0,IQFOIL Masc,67.0,1,P,117,0,,,World Championship 2021,Q4
 ,,EMMANOUIL MANIADAKIS,11.0,IQFOIL Masc,53.0,0,P,118,0,,,World Championship 2021,Q4
 ,,TOMASZ ROMANOWSKI,11.0,IQFOIL Masc,56.0,0,P,119,0,,,World Championship 2021,Q4
@@ -7771,20 +7771,20 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,ANDRE PEREIRA,11.0,IQFOIL Masc,8.0,0,P,82,0,,,World Championship 2021,F1
 ,,JAMES FALEY,11.0,IQFOIL Masc,2.0,0,P,83,0,,,World Championship 2021,F1
 ,,GUY CRIBB,11.0,IQFOIL Masc,16.0,0,P,84,0,,,World Championship 2021,F1
-,,ONUR-CAVIT BIRIZ,11.0,IQFOIL Masc,17.8,0,P,85,RDG,,,World Championship 2021,F1
+,,ONUR-CAVIT BIRIZ,11.0,IQFOIL Masc,17.8,1,P,85,RDG,,,World Championship 2021,F1
 ,,JULIAN JORDAN,11.0,IQFOIL Masc,3.0,0,P,86,0,,,World Championship 2021,F1
 ,,LARS POGGEMANN,11.0,IQFOIL Masc,6.0,0,P,87,0,,,World Championship 2021,F1
 ,,MALIK HOVELING,11.0,IQFOIL Masc,11.0,0,P,88,0,,,World Championship 2021,F1
 ,,LEONIDAS TSORTANIDIS,11.0,IQFOIL Masc,5.0,0,P,89,0,,,World Championship 2021,F1
 ,,MICHAL POLAK,11.0,IQFOIL Masc,1.0,0,P,90,0,,,World Championship 2021,F1
 ,,KENSEI IKEDA,11.0,IQFOIL Masc,14.0,0,P,91,0,,,World Championship 2021,F1
-,,HIDDE VAN-DER-MEER,11.0,IQFOIL Masc,16.0,0,P,92,RDG,,,World Championship 2021,F1
+,,HIDDE VAN-DER-MEER,11.0,IQFOIL Masc,16.0,1,P,92,RDG,,,World Championship 2021,F1
 ,,DANIEL SLIJK,11.0,IQFOIL Masc,13.0,0,P,93,0,,,World Championship 2021,F1
 ,,EGOR ZHILIN,11.0,IQFOIL Masc,22.0,0,P,94,0,,,World Championship 2021,F1
 ,,NIR LESHED,11.0,IQFOIL Masc,20.0,0,P,95,0,,,World Championship 2021,F1
 ,,EYAL ZROR,11.0,IQFOIL Masc,9.0,0,P,96,0,,,World Championship 2021,F1
 ,,JACOPO GAVIOLI,11.0,IQFOIL Masc,27.0,0,P,97,0,,,World Championship 2021,F1
-,,BIEL LLADO,11.0,IQFOIL Masc,15.8,0,P,98,RDG,,,World Championship 2021,F1
+,,BIEL LLADO,11.0,IQFOIL Masc,15.8,1,P,98,RDG,,,World Championship 2021,F1
 ,,JULIEN RATTOTTI,11.0,IQFOIL Masc,7.0,0,P,99,0,,,World Championship 2021,F1
 ,,JOHN KAJU,11.0,IQFOIL Masc,18.0,0,P,100,0,,,World Championship 2021,F1
 ,,RICCARDO ONALI,11.0,IQFOIL Masc,19.0,0,P,101,0,,,World Championship 2021,F1
@@ -7794,11 +7794,11 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,LEOPOLD SENST,11.0,IQFOIL Masc,23.0,0,P,105,0,,,World Championship 2021,F1
 ,,KAS DE-WOLF,11.0,IQFOIL Masc,10.0,0,P,106,0,,,World Championship 2021,F1
 ,,VLADISLAV BURMISTRENKO,11.0,IQFOIL Masc,34.0,0,P,107,0,,,World Championship 2021,F1
-,,OFEK ELIMELEH,11.0,IQFOIL Masc,31.2,0,P,108,RDG,,,World Championship 2021,F1
+,,OFEK ELIMELEH,11.0,IQFOIL Masc,31.2,1,P,108,RDG,,,World Championship 2021,F1
 ,,ANAMI TOMONORI,11.0,IQFOIL Masc,26.0,0,P,109,0,,,World Championship 2021,F1
 ,,PETER NORS,11.0,IQFOIL Masc,12.0,0,P,110,0,,,World Championship 2021,F1
 ,,MATEO BORS,11.0,IQFOIL Masc,15.0,0,P,111,0,,,World Championship 2021,F1
-,,BENCE SANTA,11.0,IQFOIL Masc,30.8,0,P,112,RDG,,,World Championship 2021,F1
+,,BENCE SANTA,11.0,IQFOIL Masc,30.8,1,P,112,RDG,,,World Championship 2021,F1
 ,,TIAGO ABREU,11.0,IQFOIL Masc,30.0,0,P,113,0,,,World Championship 2021,F1
 ,,ALEXANDROS KALPOGIANNAKIS,11.0,IQFOIL Masc,35.0,0,P,114,0,,,World Championship 2021,F1
 ,,EVGENII GALITSKII,11.0,IQFOIL Masc,24.0,0,P,115,0,,,World Championship 2021,F1
@@ -7806,14 +7806,14 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,MATS VON-HOLTEN,11.0,IQFOIL Masc,21.0,0,P,117,0,,,World Championship 2021,F1
 ,,EMMANOUIL MANIADAKIS,11.0,IQFOIL Masc,17.0,0,P,118,0,,,World Championship 2021,F1
 ,,TOMASZ ROMANOWSKI,11.0,IQFOIL Masc,28.0,0,P,119,0,,,World Championship 2021,F1
-,,JOAN RIUTORT,11.0,IQFOIL Masc,39.7,0,P,120,RDG,,,World Championship 2021,F1
+,,JOAN RIUTORT,11.0,IQFOIL Masc,39.7,1,P,120,RDG,,,World Championship 2021,F1
 ,,IOANNIS KARVOUNIARIS,11.0,IQFOIL Masc,29.0,0,P,121,0,,,World Championship 2021,F1
 ,,JONNE HEIMANN,11.0,IQFOIL Masc,38.0,0,P,122,0,,,World Championship 2021,F1
-,,NICO FORES-SANCHO,11.0,IQFOIL Masc,45.8,0,P,123,RDG,,,World Championship 2021,F1
+,,NICO FORES-SANCHO,11.0,IQFOIL Masc,45.8,1,P,123,RDG,,,World Championship 2021,F1
 ,,DAVIS MAZAIS,11.0,IQFOIL Masc,37.0,0,P,124,0,,,World Championship 2021,F1
 ,,EVGENII AIVAZIAN,11.0,IQFOIL Masc,39.0,0,P,125,0,,,World Championship 2021,F1
 ,,JEKABS CEZE,11.0,IQFOIL Masc,40.0,0,P,126,0,,,World Championship 2021,F1
-,,BERKE OKAY,11.0,IQFOIL Masc,49.5,0,P,127,RDG,,,World Championship 2021,F1
+,,BERKE OKAY,11.0,IQFOIL Masc,49.5,1,P,127,RDG,,,World Championship 2021,F1
 ,,ARTURS SPRINDUKS,11.0,IQFOIL Masc,55.0,0,P,128,0,,,World Championship 2021,F1
 ,,LASSE BRUDEK,11.0,IQFOIL Masc,49.0,0,P,129,0,,,World Championship 2021,F1
 ,,ILYA KIRICHUK,11.0,IQFOIL Masc,36.0,0,P,130,0,,,World Championship 2021,F1
@@ -7823,12 +7823,12 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,FILIP STORE,11.0,IQFOIL Masc,31.0,0,P,134,0,,,World Championship 2021,F1
 ,,ANAMI KENTA,11.0,IQFOIL Masc,42.0,0,P,135,0,,,World Championship 2021,F1
 ,,JAKUB ZIMA,11.0,IQFOIL Masc,43.0,0,P,136,0,,,World Championship 2021,F1
-,,SANTIAGO COSTA-HOEVEL,11.0,IQFOIL Masc,50.5,0,P,137,RDG,,,World Championship 2021,F1
+,,SANTIAGO COSTA-HOEVEL,11.0,IQFOIL Masc,50.5,1,P,137,RDG,,,World Championship 2021,F1
 ,,AURELIO TERRY-VALLE,11.0,IQFOIL Masc,45.0,0,P,138,0,,,World Championship 2021,F1
 ,,FRANK ERVIN,11.0,IQFOIL Masc,44.0,0,P,139,0,,,World Championship 2021,F1
 ,,MARTINS DZIRNIEKS,11.0,IQFOIL Masc,47.0,0,P,140,0,,,World Championship 2021,F1
 ,,WATARU TAJIMA,11.0,IQFOIL Masc,41.0,0,P,141,0,,,World Championship 2021,F1
-,,KUZEY OZTAS,11.0,IQFOIL Masc,59.0,0,P,142,RDG,,,World Championship 2021,F1
+,,KUZEY OZTAS,11.0,IQFOIL Masc,59.0,1,P,142,RDG,,,World Championship 2021,F1
 ,,ANSIS DALE,11.0,IQFOIL Masc,56.0,0,P,143,0,,,World Championship 2021,F1
 ,,YUGO SAITO,11.0,IQFOIL Masc,61.0,0,P,144,0,,,World Championship 2021,F1
 ,,STEPHAN HECKER,11.0,IQFOIL Masc,53.0,0,P,145,0,,,World Championship 2021,F1
@@ -7837,10 +7837,10 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,CYRIL EVRARD,11.0,IQFOIL Masc,52.0,0,P,148,0,,,World Championship 2021,F1
 ,,JOONAS MIK,11.0,IQFOIL Masc,58.0,0,P,149,0,,,World Championship 2021,F1
 ,,FLORIAN NEUSCHELLER,11.0,IQFOIL Masc,59.0,0,P,150,0,,,World Championship 2021,F1
-,,MILAN SCHNEIDER,11.0,IQFOIL Masc,67.7,0,P,151,RDG,,,World Championship 2021,F1
-,,ARNAU CANADA-RIPOLL,11.0,IQFOIL Masc,68.3,0,P,152,RDG,,,World Championship 2021,F1
+,,MILAN SCHNEIDER,11.0,IQFOIL Masc,67.7,1,P,151,RDG,,,World Championship 2021,F1
+,,ARNAU CANADA-RIPOLL,11.0,IQFOIL Masc,68.3,1,P,152,RDG,,,World Championship 2021,F1
 ,,JOHANNES SATTLER,11.0,IQFOIL Masc,62.0,0,P,153,0,,,World Championship 2021,F1
-,,VLADISLAV MENDELENKO,11.0,IQFOIL Masc,69.3,0,P,154,RDG,,,World Championship 2021,F1
+,,VLADISLAV MENDELENKO,11.0,IQFOIL Masc,69.3,1,P,154,RDG,,,World Championship 2021,F1
 ,,BERND TIMME,11.0,IQFOIL Masc,63.0,0,P,155,0,,,World Championship 2021,F1
 ,,DAVID CURRY,11.0,IQFOIL Masc,79.0,1,P,156,DNC,,,World Championship 2021,F1
 ,,CHRISTIAN LINNERUD,11.0,IQFOIL Masc,79.0,1,P,157,DNC,,,World Championship 2021,F1
@@ -7930,7 +7930,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,GUY CRIBB,11.0,IQFOIL Masc,5.0,0,P,84,0,,,World Championship 2021,F2
 ,,ONUR-CAVIT BIRIZ,11.0,IQFOIL Masc,9.0,0,P,85,0,,,World Championship 2021,F2
 ,,JULIAN JORDAN,11.0,IQFOIL Masc,3.0,0,P,86,0,,,World Championship 2021,F2
-,,LARS POGGEMANN,11.0,IQFOIL Masc,9.7,0,P,87,RDG,,,World Championship 2021,F2
+,,LARS POGGEMANN,11.0,IQFOIL Masc,9.7,1,P,87,RDG,,,World Championship 2021,F2
 ,,MALIK HOVELING,11.0,IQFOIL Masc,12.0,0,P,88,0,,,World Championship 2021,F2
 ,,LEONIDAS TSORTANIDIS,11.0,IQFOIL Masc,8.0,0,P,89,0,,,World Championship 2021,F2
 ,,MICHAL POLAK,11.0,IQFOIL Masc,1.0,0,P,90,0,,,World Championship 2021,F2
@@ -8094,7 +8094,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,KENSEI IKEDA,11.0,IQFOIL Masc,9.0,0,P,91,0,,,World Championship 2021,F3
 ,,HIDDE VAN-DER-MEER,11.0,IQFOIL Masc,5.0,0,P,92,0,,,World Championship 2021,F3
 ,,DANIEL SLIJK,11.0,IQFOIL Masc,7.0,0,P,93,0,,,World Championship 2021,F3
-,,EGOR ZHILIN,11.0,IQFOIL Masc,17.5,0,P,94,RDG,,,World Championship 2021,F3
+,,EGOR ZHILIN,11.0,IQFOIL Masc,17.5,1,P,94,RDG,,,World Championship 2021,F3
 ,,NIR LESHED,11.0,IQFOIL Masc,18.0,0,P,95,0,,,World Championship 2021,F3
 ,,EYAL ZROR,11.0,IQFOIL Masc,79.0,1,P,96,RET,,,World Championship 2021,F3
 ,,JACOPO GAVIOLI,11.0,IQFOIL Masc,19.0,0,P,97,0,,,World Championship 2021,F3
@@ -8142,7 +8142,7 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,FRANK ERVIN,11.0,IQFOIL Masc,65.0,0,P,139,0,,,World Championship 2021,F3
 ,,MARTINS DZIRNIEKS,11.0,IQFOIL Masc,59.0,1,P,140,0,,,World Championship 2021,F3
 ,,WATARU TAJIMA,11.0,IQFOIL Masc,60.0,0,P,141,0,,,World Championship 2021,F3
-,,KUZEY OZTAS,11.0,IQFOIL Masc,59.0,0,P,142,RDG,,,World Championship 2021,F3
+,,KUZEY OZTAS,11.0,IQFOIL Masc,59.0,1,P,142,RDG,,,World Championship 2021,F3
 ,,ANSIS DALE,11.0,IQFOIL Masc,73.0,0,P,143,0,,,World Championship 2021,F3
 ,,YUGO SAITO,11.0,IQFOIL Masc,52.0,0,P,144,0,,,World Championship 2021,F3
 ,,STEPHAN HECKER,11.0,IQFOIL Masc,63.0,0,P,145,0,,,World Championship 2021,F3
@@ -8766,9 +8766,9 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,ANAMI KENTA,11.0,IQFOIL Masc,45.0,0,P,135,0,,,World Championship 2021,F7
 ,,JAKUB ZIMA,11.0,IQFOIL Masc,57.0,0,P,136,0,,,World Championship 2021,F7
 ,,SANTIAGO COSTA-HOEVEL,11.0,IQFOIL Masc,42.0,0,P,137,0,,,World Championship 2021,F7
-,,AURELIO TERRY-VALLE,11.0,IQFOIL Masc,59.0,0,P,138,RDG,,,World Championship 2021,F7
+,,AURELIO TERRY-VALLE,11.0,IQFOIL Masc,59.0,1,P,138,RDG,,,World Championship 2021,F7
 ,,FRANK ERVIN,11.0,IQFOIL Masc,79.0,1,P,139,DNC,,,World Championship 2021,F7
-,,MARTINS DZIRNIEKS,11.0,IQFOIL Masc,52.8,0,P,140,RDG,,,World Championship 2021,F7
+,,MARTINS DZIRNIEKS,11.0,IQFOIL Masc,52.8,1,P,140,RDG,,,World Championship 2021,F7
 ,,WATARU TAJIMA,11.0,IQFOIL Masc,55.0,0,P,141,0,,,World Championship 2021,F7
 ,,KUZEY OZTAS,11.0,IQFOIL Masc,79.0,1,P,142,BFD,,,World Championship 2021,F7
 ,,ANSIS DALE,11.0,IQFOIL Masc,44.0,0,P,143,0,,,World Championship 2021,F7
@@ -9179,18 +9179,18 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,TOM DE-VRIES,11.0,IQFOIL Masc,80.0,0,O,77,DNC,773.0,573.0,World Championship 2021,F10
 ,,SHALEV EGOZY,11.0,IQFOIL Masc,75.0,1,O,78,0,813.7,605.7,World Championship 2021,F10
 ,,JAKOB EKLUND,11.0,IQFOIL Masc,77.0,1,O,79,0,813.0,613.0,World Championship 2021,F10
-,,GOYARD NICOLAS,11.0,IQFOIL Masc,0.0,0,O,1,0,83.0,24.0,World Championship 2021,F11
-,,MATTHEW BARTON,11.0,IQFOIL Masc,0.0,0,O,2,0,81.0,47.0,World Championship 2021,F11
-,,LUUC VAN-OPZEELAND,11.0,IQFOIL Masc,0.0,0,O,3,0,126.0,32.0,World Championship 2021,F11
-,,SEBASTIAN KORDEL,11.0,IQFOIL Masc,0.0,0,O,4,0,113.0,69.0,World Championship 2021,F11
-,,HUIG-JAN TAK,11.0,IQFOIL Masc,0.0,0,O,5,0,137.0,62.0,World Championship 2021,F11
-,,ANDY BROWN,11.0,IQFOIL Masc,0.0,0,O,6,0,163.0,60.0,World Championship 2021,F11
-,,SAMUEL SILLS,11.0,IQFOIL Masc,0.0,0,O,7,0,176.0,120.0,World Championship 2021,F11
-,,FINN HAWKINS,11.0,IQFOIL Masc,0.0,0,O,8,0,209.0,129.0,World Championship 2021,F11
-,,LOUIS GIARD,11.0,IQFOIL Masc,0.0,0,O,9,0,141.8,99.8,World Championship 2021,F11
-,,TOM REUVENY,11.0,IQFOIL Masc,0.0,0,O,10,0,230.0,116.0,World Championship 2021,F11
-,,CLEMENT BOURGEOIS,11.0,IQFOIL Masc,0.0,0,O,11,0,123.0,60.0,World Championship 2021,F11
-,,ELIA COLOMBO,11.0,IQFOIL Masc,0.0,0,O,12,0,195.0,116.0,World Championship 2021,F11
+,,GOYARD NICOLAS,11.0,IQFOIL Masc,0.0,1,O,1,0,83.0,24.0,World Championship 2021,F11
+,,MATTHEW BARTON,11.0,IQFOIL Masc,0.0,1,O,2,0,81.0,47.0,World Championship 2021,F11
+,,LUUC VAN-OPZEELAND,11.0,IQFOIL Masc,0.0,1,O,3,0,126.0,32.0,World Championship 2021,F11
+,,SEBASTIAN KORDEL,11.0,IQFOIL Masc,0.0,1,O,4,0,113.0,69.0,World Championship 2021,F11
+,,HUIG-JAN TAK,11.0,IQFOIL Masc,0.0,1,O,5,0,137.0,62.0,World Championship 2021,F11
+,,ANDY BROWN,11.0,IQFOIL Masc,0.0,1,O,6,0,163.0,60.0,World Championship 2021,F11
+,,SAMUEL SILLS,11.0,IQFOIL Masc,0.0,1,O,7,0,176.0,120.0,World Championship 2021,F11
+,,FINN HAWKINS,11.0,IQFOIL Masc,0.0,1,O,8,0,209.0,129.0,World Championship 2021,F11
+,,LOUIS GIARD,11.0,IQFOIL Masc,0.0,1,O,9,0,141.8,99.8,World Championship 2021,F11
+,,TOM REUVENY,11.0,IQFOIL Masc,0.0,1,O,10,0,230.0,116.0,World Championship 2021,F11
+,,CLEMENT BOURGEOIS,11.0,IQFOIL Masc,0.0,1,O,11,0,123.0,60.0,World Championship 2021,F11
+,,ELIA COLOMBO,11.0,IQFOIL Masc,0.0,1,O,12,0,195.0,116.0,World Championship 2021,F11
 ,,PIERRE LE-COQ,11.0,IQFOIL Masc,3.0,0,O,13,0,268.0,136.0,World Championship 2021,F11
 ,,MESTRE ADRIEN,11.0,IQFOIL Masc,2.0,0,O,14,RDG,226.0,146.0,World Championship 2021,F11
 ,,TOM ARNOUX,11.0,IQFOIL Masc,1.0,0,O,15,0,229.0,147.0,World Championship 2021,F11
@@ -9258,18 +9258,18 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,TOM DE-VRIES,11.0,IQFOIL Masc,11.0,0,O,77,0,773.0,573.0,World Championship 2021,F11
 ,,SHALEV EGOZY,11.0,IQFOIL Masc,9.0,0,O,78,0,813.7,605.7,World Championship 2021,F11
 ,,JAKOB EKLUND,11.0,IQFOIL Masc,16.0,0,O,79,0,813.0,613.0,World Championship 2021,F11
-,,GOYARD NICOLAS,11.0,IQFOIL Masc,0.0,0,O,1,0,83.0,24.0,World Championship 2021,F12
-,,MATTHEW BARTON,11.0,IQFOIL Masc,0.0,0,O,2,0,81.0,47.0,World Championship 2021,F12
-,,LUUC VAN-OPZEELAND,11.0,IQFOIL Masc,0.0,0,O,3,0,126.0,32.0,World Championship 2021,F12
-,,SEBASTIAN KORDEL,11.0,IQFOIL Masc,0.0,0,O,4,0,113.0,69.0,World Championship 2021,F12
-,,HUIG-JAN TAK,11.0,IQFOIL Masc,0.0,0,O,5,0,137.0,62.0,World Championship 2021,F12
-,,ANDY BROWN,11.0,IQFOIL Masc,0.0,0,O,6,0,163.0,60.0,World Championship 2021,F12
-,,SAMUEL SILLS,11.0,IQFOIL Masc,0.0,0,O,7,0,176.0,120.0,World Championship 2021,F12
-,,FINN HAWKINS,11.0,IQFOIL Masc,0.0,0,O,8,0,209.0,129.0,World Championship 2021,F12
-,,LOUIS GIARD,11.0,IQFOIL Masc,0.0,0,O,9,0,141.8,99.8,World Championship 2021,F12
-,,TOM REUVENY,11.0,IQFOIL Masc,0.0,0,O,10,0,230.0,116.0,World Championship 2021,F12
-,,CLEMENT BOURGEOIS,11.0,IQFOIL Masc,0.0,0,O,11,0,123.0,60.0,World Championship 2021,F12
-,,ELIA COLOMBO,11.0,IQFOIL Masc,0.0,0,O,12,0,195.0,116.0,World Championship 2021,F12
+,,GOYARD NICOLAS,11.0,IQFOIL Masc,0.0,1,O,1,0,83.0,24.0,World Championship 2021,F12
+,,MATTHEW BARTON,11.0,IQFOIL Masc,0.0,1,O,2,0,81.0,47.0,World Championship 2021,F12
+,,LUUC VAN-OPZEELAND,11.0,IQFOIL Masc,0.0,1,O,3,0,126.0,32.0,World Championship 2021,F12
+,,SEBASTIAN KORDEL,11.0,IQFOIL Masc,0.0,1,O,4,0,113.0,69.0,World Championship 2021,F12
+,,HUIG-JAN TAK,11.0,IQFOIL Masc,0.0,1,O,5,0,137.0,62.0,World Championship 2021,F12
+,,ANDY BROWN,11.0,IQFOIL Masc,0.0,1,O,6,0,163.0,60.0,World Championship 2021,F12
+,,SAMUEL SILLS,11.0,IQFOIL Masc,0.0,1,O,7,0,176.0,120.0,World Championship 2021,F12
+,,FINN HAWKINS,11.0,IQFOIL Masc,0.0,1,O,8,0,209.0,129.0,World Championship 2021,F12
+,,LOUIS GIARD,11.0,IQFOIL Masc,0.0,1,O,9,0,141.8,99.8,World Championship 2021,F12
+,,TOM REUVENY,11.0,IQFOIL Masc,0.0,1,O,10,0,230.0,116.0,World Championship 2021,F12
+,,CLEMENT BOURGEOIS,11.0,IQFOIL Masc,0.0,1,O,11,0,123.0,60.0,World Championship 2021,F12
+,,ELIA COLOMBO,11.0,IQFOIL Masc,0.0,1,O,12,0,195.0,116.0,World Championship 2021,F12
 ,,PIERRE LE-COQ,11.0,IQFOIL Masc,1.0,0,O,13,0,268.0,136.0,World Championship 2021,F12
 ,,MESTRE ADRIEN,11.0,IQFOIL Masc,1.0,0,O,14,0,226.0,146.0,World Championship 2021,F12
 ,,TOM ARNOUX,11.0,IQFOIL Masc,2.0,0,O,15,0,229.0,147.0,World Championship 2021,F12
@@ -11905,11 +11905,11 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,PENEV MARTIN,,Ilca 7,59.0,1,P,48,SCP,568.0,450.0,European Championship 2021,Q1
 ,,ANASTASIADIS DIMITRIOS,,Ilca 7,57.0,0,P,49,0,584.0,466.0,European Championship 2021,Q1
 ,,BECKETT MICHAEL,,Ilca 7,10,0,O,1,0,43.0,23.0,European Championship 2021,Q2
-,,JURISIC FILIP,,Ilca 7,200,0,O,2,0,71.0,39.0,European Championship 2021,Q2
+,,JURISIC FILIP,,Ilca 7,200,1,O,2,0,71.0,39.0,European Championship 2021,Q2
 ,,VADNAI JONATAN,,Ilca 7,100,0,O,3,0,75.0,43.0,European Championship 2021,Q2
 ,,NIKOLAEV MAXIM,,Ilca 7,40,0,O,4,0,78.8,44.8,European Championship 2021,Q2
 ,,KONTIDES PAVLOS,,Ilca 7,30,0,O,5,0,72.0,47.0,European Championship 2021,Q2
-,,CHIAVARINI LORENZO BRANDO,,Ilca 7,130,0,O,6,0,85.0,55.0,European Championship 2021,Q2
+,,CHIAVARINI LORENZO BRANDO,,Ilca 7,130,1,O,6,0,85.0,55.0,European Championship 2021,Q2
 ,,LYNCH FINN,,Ilca 7,100,0,O,7,0,153.0,64.0,European Championship 2021,Q2
 ,,BOS DUKO,,Ilca 7,80,0,O,8,0,115.0,70.0,European Championship 2021,Q2
 ,,VAN LAER WANNES,,Ilca 7,70,0,O,9,0,134.0,87.0,European Championship 2021,Q2
@@ -11948,11 +11948,11 @@ ID Resultado,ID Competidor,Nome Competidor,ID Competição,Classe Vela,Pontuaç�
 ,,TAPPER ALEKSI,,Ilca 7,250,0,O,42,0,350.0,259.0,European Championship 2021,Q2
 ,,GLYNN LIAM,,Ilca 7,260,0,O,43,0,363.0,267.0,European Championship 2021,Q2
 ,,KARK WILHELM,,Ilca 7,280,0,O,44,0,364.0,267.0,European Championship 2021,Q2
-,,PAJARSKAS MARTIS,,Ilca 7,480,0,O,45,0,382.0,277.0,European Championship 2021,Q2
+,,PAJARSKAS MARTIS,,Ilca 7,480,1,O,45,0,382.0,277.0,European Championship 2021,Q2
 ,,VAN OFWEGEN THOMAS,,Ilca 7,230,0,O,46,0,371.0,279.0,European Championship 2021,Q2
 ,,MATEUS LOURENCO,,Ilca 7,290,0,O,47,0,370.0,285.0,European Championship 2021,Q2
 ,,FARREN-PRICE JACOB,,Ilca 7,260,0,O,48,0,402.0,289.0,European Championship 2021,Q2
-,,MARKOVIC ILIJA,,Ilca 7,470,0,O,49,0,404.0,301.0,European Championship 2021,Q2
+,,MARKOVIC ILIJA,,Ilca 7,470,1,O,49,0,404.0,301.0,European Championship 2021,Q2
 ,,UUSITALO VALTTERI,,Ilca 7,59.0,1,P,1,RET,178.0,60.0,European Championship 2021,Q2
 ,,ROLAZ NICOLAS,,Ilca 7,40.0,0,P,2,0,183.0,93.0,European Championship 2021,Q2
 ,,HOFFMANN JULIAN,,Ilca 7,46.0,1,P,3,0,205.0,100.0,European Championship 2021,Q2
