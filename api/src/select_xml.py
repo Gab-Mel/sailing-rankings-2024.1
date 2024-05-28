@@ -23,6 +23,7 @@ def competicoes():
 def sumulas():
     return pd.read_excel('../dados_finais_2024/sumulas.xlsx')
 
-
+sumulas = sumulas()
+print(sumulas['Classe Vela'].value_counts())
 #print(retun_xlsx())
 #print(listRanking.keys())

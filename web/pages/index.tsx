@@ -6,7 +6,8 @@ import {
   Box,
   Flex,
   IconButton,
-  Select
+  Select,
+  filter
 } from "@chakra-ui/react";
 import Head from "next/head";
 import { api } from "../config/api";
@@ -16,14 +17,34 @@ import Link from "next/link";
 
 interface IDocumentPageProps {
   rankings: Array<IRankingModel>;
+  filter: {classe: string, ano: string, ranking: string};
 }
+
+
 
 export default function DocumentPage({ rankings }: IDocumentPageProps) {
   async function onSubmit(event: React.FormEvent<HTMLFormElement>) {
 
     const response = await api.post("/ranking", {name: "Ranking 1"});
-
+    
   }
+
+
+ async function setClasseSelecionada(classeSelecionada: string) {
+    const classe =  classeSelecionada;
+    return classe;
+  }
+
+  async function setAnoSelecionada(anoSelecionado: string,
+    filter:{classe: string, ano: string, ranking: string}) {
+    filter.ano = anoSelecionado;
+  }
+
+  async function setRankingSelecionada(rankingSelecionado: string, 
+    filter:{classe: string, ano: string, ranking: string}) {
+    filter.ranking = rankingSelecionado;
+  }
+
 
   return (
     <>
@@ -53,9 +74,23 @@ export default function DocumentPage({ rankings }: IDocumentPageProps) {
             <option value="2022">2022</option>
             <option value="2023">2023</option>
             <option value="2024">2024</option>
-          </Select>         
+          </Select>
+          <Select placeholder="Selecione uma classe"          
+          onChange={(Event) => {setClasseSelecionada(Event.target.value)}}>
+            <option value="ILCA 6">ILCA 6</option>
+            <option value="ILCA 7">ILCA 7</option>
+            <option value="49ER">49ER</option>
+            <option value="49ERFX">49ERFX</option>
+            <option value="IQFOIL MASC.">IQFOIL MASC.</option>
+            <option value="IQFOIL FEM.">IQFOIL FEM.</option>
+            <option value="FORMULA KITE MASC.">FORMULA KITE MASC.</option>
+            <option value="FORMULA KITE FEM.">FORMULA KITE FEM.</option>
+            <option value="NACRA 17">NACRA 17</option>
+            <option value="KITE">KITE</option>
+            <option value="IQFOIL 9">IQFOIL 9</option>
+            <option value="IQFOIL 8">IQFOIL 8</option>
+          </Select>
         </Flex>
-
         <Flex direction="column" mb={4} alignItems="stretch">
           {rankings.map((ranking) => (
             
@@ -85,9 +120,11 @@ export default function DocumentPage({ rankings }: IDocumentPageProps) {
 }
 
 export const getStaticProps: GetStaticProps = async (context) => {
-  const response = await api.get("/ranking");
+  
+  const response = await api.get("/ranking", );
   const rankings = response.data as Record<string, number>[];
   const rankingsh = rankings.sort((a, b) => b.score - a.score);
+  const filter = {classe: "", ano: "", ranking: ""};
 
     return {
       props: {
@@ -100,5 +137,6 @@ export const getStaticProps: GetStaticProps = async (context) => {
         })),
       },
       revalidate: 1,
+      filter: filter,
     };
 };
