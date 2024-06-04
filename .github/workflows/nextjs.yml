@@ -56,7 +56,8 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
           cache-dependency-path: web/package-lock.json
-      - run: npm install
+      - run: npm ci
+      - run: npm test
       - name: Setup Pages
         uses: actions/configure-pages@v5
         with:
