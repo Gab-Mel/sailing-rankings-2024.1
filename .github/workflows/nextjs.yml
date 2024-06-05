@@ -75,12 +75,6 @@ jobs:
       - name: Install dependencies
         run: npm ci
         working-directory: './web'
-      - name: install api dependences
-        run: make install
-        working-directory: './api'
-      - name: run api
-        run: make dev
-        working-directory: './api'
       - run: npx @next/codemod built-in-next-font .
         working-directory: './web'
       - name: Build with Next.js
