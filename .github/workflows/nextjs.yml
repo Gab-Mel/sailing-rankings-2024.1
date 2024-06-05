@@ -78,7 +78,7 @@ jobs:
       #- run: npx @next/codemod built-in-next-font .
       #  working-directory: './web'
       - name: Build with Next.js
-        run: npx next buil
+        run: npx next build
         working-directory: './web'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
