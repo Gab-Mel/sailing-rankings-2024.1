@@ -128,6 +128,8 @@ def cluster8(URL: str, PATH_TO_CHROMEDRIVER: str, NOME_COMPETICAO: str, ID_COMPE
     
     df_49er.rename(columns={'variable': 'Flotilha', 'value': 'Pontuação Regata'}, inplace=True)
     df_49erFX.rename(columns={'variable': 'Flotilha', 'value': 'Pontuação Regata'}, inplace=True)
+    df_49er["Regata"] = df_49er["Flotilha"]
+    df_49erFX["Regata"] = df_49erFX["Flotilha"]
     
     df_49er['Nome Competição'] = [NOME_COMPETICAO] * len(df_49er)
     df_49erFX['Nome Competição'] = [NOME_COMPETICAO] * len(df_49erFX)
@@ -143,17 +145,15 @@ def cluster8(URL: str, PATH_TO_CHROMEDRIVER: str, NOME_COMPETICAO: str, ID_COMPE
     
     column_order = ['Nome Competidor', 'ID Competição', 'Classe Vela',
                     'Pontuação Regata', 'Flotilha', 'Posição Geral', 
-                    'Punição', 'Pontuação Total', 'Nett', 'Nome Competição']
+                    'Punição', 'Pontuação Total', 'Nett', 'Nome Competição', 'Regata']
     
     df_49er = df_49er[column_order]
     df_49erFX = df_49erFX[column_order]
     
     if NOME_COMPETICAO == 'World Championship 2019':
         df_49er['Flotilha'] = df_49er['Flotilha'].apply(rename_fleet1_cluster8, args=('49er',))
-        df_49erFX['Flotilha'] = df_49erFX['Flotilha'].apply(rename_fleet1_cluster8, args=('49erFX',))
     elif NOME_COMPETICAO == 'World Championship 2020':
         df_49er['Flotilha'] = df_49er['Flotilha'].apply(rename_fleet2_cluster8, args=('49er',))
-        df_49erFX['Flotilha'] = df_49erFX['Flotilha'].apply(rename_fleet2_cluster8, args=('49erFX',))
     elif NOME_COMPETICAO == 'European Championship 2021':
         df_49er['Flotilha'] = df_49er['Flotilha'].apply(rename_fleet3_cluster8, args=('49er',))
         df_49erFX['Flotilha'] = df_49erFX['Flotilha'].apply(rename_fleet3_cluster8, args=('49erFX',))
@@ -162,10 +162,60 @@ def cluster8(URL: str, PATH_TO_CHROMEDRIVER: str, NOME_COMPETICAO: str, ID_COMPE
     df_49er = df_49er[df_49er['Pontuação Regata'] != '']
     df_49erFX = df_49erFX[df_49erFX['Pontuação Regata'] != '']
     
-    df_49er.to_excel(f'scraped-data/{NOME_COMPETICAO}_49er.xlsx', index=False)
-    df_49erFX.to_excel(f'scraped-data/{NOME_COMPETICAO}_49erFX.xlsx', index=False)
+    df_49er.to_csv(f'../scraped-data-2024/c8/{NOME_COMPETICAO}_49er.csv', index=False)
+    df_49erFX.to_csv(f'../scraped-data-2024/c8/{NOME_COMPETICAO}_49erFX.csv', index=False)
     
     return df_49er, df_49erFX
+
+
+def cluster8_nacra(URL: str, NOME_COMPETICAO: str, DRIVER):
+    DRIVER.get(URL)
+    html = DRIVER.page_source
+    
+    soup = BeautifulSoup(html, 'html.parser')
+    
+    for table in soup.find_all('table'):
+        data_49er = iter_rows(table)
+            
+    df_49er = pd.DataFrame(data_49er[1:])
+    
+    columns = ['Posição Geral', 'Sail Number', 'Nome Competidor', 'Nett', 'Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 
+              'Q7', 'Q8', 'Q9', 'Q10', 'Q11', 'Q12', 'Q13', 'Q14', 'Q15', 'Q16', 'Q17', 'Pontuação Total']
+    
+    df_49er.columns = columns
+    
+    df_49er.drop('Sail Number', axis=1, inplace=True)
+    
+    df_49er = pd.melt(df_49er, id_vars=['Posição Geral', 'Nome Competidor', 'Nett', 'Pontuação Total'],
+                      value_vars=['Q1', 'Q2', 'Q3', 'Q4', 'Q5', 'Q6', 'Q7', 'Q8',
+                                  'Q9', 'Q10', 'Q11', 'Q12', 'Q13', 'Q14', 'Q15', 'Q16', 'Q17'])
+    
+    df_49er.rename(columns={'variable': 'Flotilha', 'value': 'Pontuação Regata'}, inplace=True)
+    df_49er["Regata"] = df_49er["Flotilha"]
+    
+    df_49er['Nome Competição'] = [NOME_COMPETICAO] * len(df_49er)
+    
+    df_49er['ID Competição'] = ''
+    
+    df_49er['Classe Vela'] = ['Nacra17'] * len(df_49er)
+    
+    df_49er['Punição'] = [''] * len(df_49er)
+    
+    column_order = ['Nome Competidor', 'ID Competição', 'Classe Vela',
+                    'Pontuação Regata', 'Flotilha', 'Posição Geral', 
+                    'Punição', 'Pontuação Total', 'Nett', 'Nome Competição', 'Regata']
+    
+    df_49er = df_49er[column_order]
+    
+    df_49er['Flotilha'] = df_49er['Flotilha'].apply(rename_fleet1_cluster8, args=('49er',))
+        
+    # drop rows where 'Pontuação Regata' is ''
+    df_49er = df_49er[df_49er['Pontuação Regata'] != '']
+    
+    df_49er.to_csv(f'../scraped-data-2024/c8/{NOME_COMPETICAO}_nacra17.csv', index=False)
+    
+    return df_49er
+
 
 #################################################
 ################### CLUSTER 9 ###################
@@ -191,7 +241,7 @@ def cluster9(reference: dict):
     """
     r = requests.get(reference['URL'])
     data = r.json()
-
+    
     extracted_data = {
         'Nome Competidor': [],
         'ID Competição': [],
@@ -204,12 +254,14 @@ def cluster9(reference: dict):
         'Pontuação Total': [],
         'Nett': [],
         'Nome Competição': [],
+        'Regata': []
     }
     
     data = data['EntryResults']
     
     for velejador in data:
         regatas = velejador['EntryRaceResults']
+        regata_count = 1
         for regata in regatas:
             extracted_data['Nome Competidor'].append(velejador['Name'] + velejador['Crew'])
             extracted_data['ID Competição'].append(reference['ID Competição'])
@@ -240,6 +292,8 @@ def cluster9(reference: dict):
             extracted_data['Pontuação Total'].append(velejador['TotalPoints'])
             extracted_data['Nett'].append(velejador['NetPoints'])
             extracted_data['Nome Competição'].append(reference['Nome Competição'])
+            extracted_data['Regata'].append(regata_count)
+            regata_count += 1
             
     extracted_data = pd.DataFrame(extracted_data)
     
@@ -248,8 +302,8 @@ def cluster9(reference: dict):
     extracted_data = extracted_data.dropna(subset=['Pontuação Regata'])
     extracted_data['Flotilha'] = extracted_data['Flotilha'].apply(rename_fleet_cluster9)
 
-    extracted_data.to_excel(f'../temp-scraped-data/{reference["Nome Competição"]}_{reference["Classe Vela"]}.xlsx', index=False)
-    extracted_data.to_excel(f'../scraped-data/{reference["Nome Competição"]}_{reference["Classe Vela"]}.xlsx', index=False)
+    # extracted_data.to_csv(f'../temp-scraped-data/new_{reference["Nome Competição"]}_{reference["Classe Vela"]}.csv', index=False)
+    extracted_data.to_csv(f'../scraped-data-2024/c9/{reference["Nome Competição"]}_{reference["Classe Vela"]}.csv', index=False)
     
     return extracted_data
 
@@ -294,7 +348,7 @@ def add_columns(df, CAMPEONATO, ID_CAMPEONATO, CLASSE, FLOTILHA=None):
     
     column_order = ['Nome Competidor', 'ID Competição', 'Classe Vela', 'Pontuação Regata',
                     'Flotilha', 'Posição Geral', 'Punição', 'Pontuação Total', 
-                    'Nett', 'Nome Competição']
+                    'Nett', 'Nome Competição', 'Regata']
 
     df = df[column_order]
     
@@ -309,12 +363,12 @@ def extract_and_melt(URL, CAMPEONATO, ID_CAMPEONATO, CLASSE, COLUNAS, FLOTILHA=N
     options = Options()
     options.add_argument("--headless")
     
-    PATH_TO_CHROMEDRIVER = 'chromedriver-mac-x64/chromedriver'
-    
-    driver = Chrome(PATH_TO_CHROMEDRIVER, options=options)
-    driver.get(URL)
-    html = driver.page_source
+    # PATH_TO_CHROMEDRIVER = 'chromedriver-mac-x64/chromedriver'
+    # options.add_argument(PATH_TO_CHROMEDRIVER)
 
+    with Chrome(options=options) as browser:
+        browser.get(URL)
+        html = browser.page_source
     soup = BeautifulSoup(html, "html.parser")
     
     data = []
@@ -345,10 +399,10 @@ def extract_and_melt(URL, CAMPEONATO, ID_CAMPEONATO, CLASSE, COLUNAS, FLOTILHA=N
             value_vars = DIFFERENT_TABLE_COLUMNS[2:-1]
             print(value_vars)
             
-            df2 = pd.melt(df2, id_vars=id_vars, value_vars=value_vars)
+            df2 = pd.melt(df2, id_vars=id_vars, var_name="Regata", value_vars=value_vars)
             
             df2.rename(columns={'value': 'Pontuação Regata'}, inplace=True)
-            df2.drop('variable', axis=1, inplace=True)
+            # df2.drop('variable', axis=1, inplace=True)
             
             df2['Nett'] = df2['Pontuação Total']
             
@@ -403,11 +457,11 @@ def extract_and_melt(URL, CAMPEONATO, ID_CAMPEONATO, CLASSE, COLUNAS, FLOTILHA=N
         value_vars = COLUNAS[3:-2]
         print(value_vars)
     
-    df = pd.melt(df, id_vars=id_vars, value_vars=value_vars)
+    df = pd.melt(df, id_vars=id_vars, var_name="Regata", value_vars=value_vars)
     
     # rename column 'variable' to 'Flotilha'
     df.rename(columns={'value': 'Pontuação Regata'}, inplace=True)
-    df.drop('variable', axis=1, inplace=True)
+    # df.drop('variable', axis=1, inplace=True)
     
     df['Posição Geral'] = df['Posição Geral'].apply(rank_to_int)
     
@@ -428,6 +482,6 @@ def extract_and_melt(URL, CAMPEONATO, ID_CAMPEONATO, CLASSE, COLUNAS, FLOTILHA=N
     except:
         pass
     
-    df.to_excel(f'scraped-data/{CAMPEONATO}_{CLASSE}.xlsx', index=False)
+    df.to_csv(f'../scraped-data-2024/c2/{CAMPEONATO}_{CLASSE}.csv', index=False)
     
     return df
