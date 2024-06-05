@@ -76,7 +76,7 @@ jobs:
         run: npm install
         working-directory: './web'
       - name: Build with Next.js
-        run: npm run dev
+        run: npx next build
         working-directory: './web'
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
