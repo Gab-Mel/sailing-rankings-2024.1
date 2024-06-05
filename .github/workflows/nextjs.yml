@@ -76,6 +76,7 @@ jobs:
         run: npm ci
         working-directory: './web'
       - run: npx @next/codemod built-in-next-font .
+        working-directory: './web'
       - name: Build with Next.js
         run: npx next buil
       - name: Upload artifact
