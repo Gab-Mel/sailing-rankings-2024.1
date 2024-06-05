@@ -1,7 +1,7 @@
 
 from fastapi import FastAPI, Depends, HTTPException
 from database import load_database, load_session
-from nlp import generate_questions
+#from nlp import generate_questions
 from models import AtletaModel, RankingEloModel, final_dataModel, CompeticaoModel
 import select_xml as xml
 from pydantic import BaseModel
