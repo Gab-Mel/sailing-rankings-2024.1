@@ -31,10 +31,10 @@ jobs:
     steps:
       - name: install api dependences
         run: make install
-        working-directory: './api'
+        working-directory: 'api'
       - name: run api
         run: make dev
-        working-directory: './api'
+        working-directory: 'api'
       - name: Checkout
         uses: actions/checkout@v4
       - name: Detect package manager
