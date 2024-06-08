@@ -1,6 +1,6 @@
 import { ChakraProvider, Container, Flex, Image, Text } from "@chakra-ui/react";
 import type { AppProps } from "next/app";
-import { Poppins, Shadows_Into_Light } from "@next/font/google";
+import { Poppins, Shadows_Into_Light } from "next/font/google";
 import { useEffect } from "react";
 import { Box } from "@chakra-ui/react";
 import Link from "next/link";
