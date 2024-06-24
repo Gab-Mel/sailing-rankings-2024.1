@@ -66,22 +66,22 @@ fetch('/tables').then(response => response.json()).then(data => {
               //     td.appendChild(document.createTextNode(text));
               //     row.appendChild(td);
               // });
-              [i+1, item.index, Number(item.Rating).toFixed(2)].forEach(text => {
-                if (text === item.index) {
-                    const button = document.createElement('button');
-                    button.textContent = 'Go to Google';
-                    button.onclick = function() {
-                        window.location.href = 'https://www.google.com/search?q=' + encodeURIComponent(item.index);
-                    };
-                    const td = document.createElement('td');
-                    td.appendChild(button);
-                    row.appendChild(td);
-                } else {
-                    const td = document.createElement('td');
-                    td.appendChild(document.createTextNode(text));
-                    row.appendChild(td);
+              [i+1, item.index, Number(item.Rating).toFixed(2)].forEach((text, columnIndex) => {
+                const td = document.createElement('td');
+                td.appendChild(document.createTextNode(text));
+                row.appendChild(td);
+        
+                // Verifica se a coluna atual é a do nome do atleta
+                if (columnIndex === 1) {
+                    // Supondo que a URL possa ser construída assim
+                    const athleteUrl = `players.html?name=${encodeURIComponent(item.index)}`;
+                    td.setAttribute('data-url', athleteUrl);
+                    td.style.cursor = 'pointer'; // Muda o cursor para indicar clicabilidade
+                    td.addEventListener('click', function() {
+                        window.location.href = this.getAttribute('data-url');
+                    });
                 }
-            });
+              });
 
               row.addEventListener('click', () => {
                 window.location.href = "https://google.com" //`/player?table=${table}&year=${yearSelected}&index=${item.index}`;
@@ -103,13 +103,13 @@ fetch('/tables').then(response => response.json()).then(data => {
     const b = document.createElement('button');
     buttons.push(b);
     b.addEventListener('click', () => {
-      // change the button color to #ededed and the others to white
+      // change the button color to #c9f3ff and the others to white
       buttons.forEach(button => {
-        button.style.backgroundColor = '#3d71a2';
+        button.style.backgroundColor = '#7dc0d3';
         button.style.color = 'white';
       });
-      b.style.backgroundColor = '#012B39';
-      b.style.color = '#E2B842';
+      b.style.backgroundColor = '#6782b9';
+      b.style.color = '#2c2851';
 
       // obter o índice de 'b' em 'buttons'
       const index = buttons.indexOf(b);
