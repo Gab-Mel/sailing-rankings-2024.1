@@ -196,6 +196,19 @@ button2.onclick = function() {
 
 header.appendChild(button2);
 
+// Cria o botão
+let button3 = document.createElement('button');
+
+// Define o texto do botão
+button3.textContent = 'About';
+
+// Define o evento de clique do botão
+button3.onclick = function() {
+    window.location.href = '/about';
+};
+
+header.appendChild(button3);
+
 
 const h1 = document.querySelector('h1');
 
