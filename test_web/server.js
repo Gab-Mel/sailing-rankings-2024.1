@@ -12,12 +12,47 @@ let db = new sqlite3.Database('./elo_ranking.db', sqlite3.OPEN_READONLY, (err) =
   console.log('Conectado ao banco de dados SQLite.');
 });
 
+let dbPlayers = new sqlite3.Database('./players.db', sqlite3.OPEN_READONLY, (err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log('players.db conectado.');
+});
+
+let dbSumulas = new sqlite3.Database('./sumulas_simples.db', sqlite3.OPEN_READONLY, (err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log('sumulas_simples.db conectado.');
+});
+
+
+dbPlayers.all("SELECT name FROM sqlite_master WHERE type='table';", [], (err, tables) => {
+  if (err) {
+    throw err;
+  }
+  tables.forEach((table) => {
+    console.log(table.name);
+  });
+});
+
+
 db.all("SELECT name FROM sqlite_master WHERE type='table';", [], (err, tables) => {
   if (err) {
     throw err;
   }
   tables.forEach((table) => {
     console.log(table.name);
+  });
+});
+
+app.get('/sumulas', (req, res) => {
+  dbSumulas.all("SELECT name FROM sqlite_master WHERE type='table';", [], (err, tables) => {
+    if (err) {
+      throw err;
+    }
+    tablesNames = tables.map(table => table.name);
+    res.send(tablesNames);
   });
 });
 
@@ -29,9 +64,30 @@ app.get('/tables', (req, res) => {
   });
 });
 
+app.get('/year', (req, res) => {
+  const table = req.query.table;
+  db.all(`SELECT DISTINCT Year FROM '${table}' ORDER BY Year DESC`, [], (err, rows) => {
+    if (err) {
+      throw err;
+    }
+    res.send(rows);
+  });
+});
+
 app.get('/rating', (req, res) => {
   const table = req.query.table;
-  db.all(`SELECT * FROM '${table}' WHERE Year = 2024`, [], (err, rows) => {
+  const year = req.query.year;
+  db.all(`SELECT * FROM '${table}' WHERE Year = ${year}`, [], (err, rows) => {
+    if (err) {
+      throw err;
+    }
+    res.send(rows);
+  });
+})
+
+app.get('/sumulasT', (req, res) => {
+  const table = req.query.table;
+  dbSumulas.all(`SELECT * FROM '${table}';`, [], (err, rows) => {
     if (err) {
       throw err;
     }
@@ -53,17 +109,66 @@ app.get('/data', (req, res) => {
 });
 
 app.get('/query', (req, res) => {
-  const data = req.query.data.split(',');
+  const data = JSON.parse(req.query.data);
   const placeholders = data.map(() => '?').join(',');
-  const sql = `SELECT * FROM '${table}' WHERE "index" IN (${placeholders})`;
-  
-  db.all(sql, data, (err, rows) => {
+  const sqlRating = `
+  WITH RankedAthletes AS (
+    SELECT "index", "Rating", "Year", 
+           RANK() OVER (PARTITION BY "Year" ORDER BY "Rating" DESC) AS Position
+    FROM '${table}'
+  )
+  SELECT * FROM RankedAthletes
+  WHERE "index" IN (${placeholders})
+  ORDER BY "Year", "Rating" DESC;
+  `;
+  db.all(sqlRating, data, (err, rows) => {
     if (err) {
       throw err;
     }
     res.send(rows);
   });
+});
+
+app.get('/queryplayer', (req, res) => {
+  const data = JSON.parse(req.query.data);
+  const placeholders = data.map(() => '?').join(',');
+  const tables = JSON.parse(req.query.tables);
+  const queries = tables.map((table) => {
+    return new Promise((resolve, reject) => {
+      const sqlRating = `
+      WITH RankedAthletes AS (
+        SELECT "index", "Rating", "Year", 
+               RANK() OVER (PARTITION BY "Year" ORDER BY "Rating" DESC) AS Position
+        FROM '${table}'
+      )
+      SELECT * FROM RankedAthletes
+      WHERE "index" IN (${placeholders})
+      ORDER BY "Year", "Rating" DESC;
+      `;
+      db.all(sqlRating, data, (err, rows) => {
+        if (err) {
+          reject(err);
+        } else {
+          // Use o nome da tabela como chave e os resultados como valor
+          resolve({[table]: rows});
+        }
+      });
+    });
   });
+
+  Promise.all(queries)
+    .then(results => {
+      // Combine todos os objetos de resultados em um único objeto
+      const combinedResults = results.reduce((acc, current) => {
+        return {...acc, ...current};
+      }, {});
+      res.json(combinedResults); // Envie o objeto combinado como JSON
+    })
+    .catch(error => {
+      console.error("Erro ao processar consultas:", error);
+      res.status(500).send("Erro ao processar consultas");
+    });
+});
 
 // cria uma rota '/' que retorna a pasta public
 
@@ -77,6 +182,25 @@ app.get('/', (req, res) => {
 // Rota para outra página
 app.get('/search', (req, res) => {
   res.sendFile(path.join(__dirname, 'public', 'search.html'));
+});
+
+//Rota para a página players
+app.get('/players', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'players.html'));
+});
+
+app.get('/summary', (req, res) =>{
+  res.sendFile(path.join(__dirname, 'public', 'summary.html'));
+})
+
+app.get('/playersapi', (req, res) => {
+  const name = req.query.name;
+  dbPlayers.all(`SELECT * FROM "Resultados" WHERE "Nome" = "${name}"`, [], (err, rows) => {
+    if (err) {
+      throw err;
+    }
+    res.send(rows);
+  });
 });
 
 app.listen(port, () => {

@@ -57,17 +57,24 @@ function searchPlayers(searchValue,data,selectedValues){
       checkbox.checked = true;
       selectedValues.push(checkboxValue);
       // muda o display para block
-      checkbox.parentElement.style.display = 'block';
-      const queryString = selectedValues.join(',');
-      fetch(`/query?data=${queryString}`)
+      checkbox.parentElement.style.display = 'block';      
+      
+    }
+    suggestionsList.innerHTML = '';
+    searchInput.value = '';
+  });
+  let queryString = JSON.stringify(selectedValues);
+  fetch(`/query?data=${queryString}`)
       .then(response => response.json())
       .then(data => {
+        console.log(data);
         minMaxBound = getMinMaxBound(data);
          var yourVlSpec = {
           "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
           "description": "Elo Rating evolution",
+          "title": "Evolution of Rating Elo", 
           "width": 600,
-          "height": 400,
+          "height": 300,
           "data": {
             "values": data.map(d => ({...d, Year: new Date(d.Year, 0)})) // Transforma "Year" em uma data
           },
@@ -98,21 +105,53 @@ function searchPlayers(searchValue,data,selectedValues){
         };
     
         vegaEmbed('#vis', yourVlSpec);
+        var yourVlSpec2 = {
+          "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+          "description": "Elo Rating evolution",
+          "width": 600,
+          "height": 300,
+          "title": "Evolution of Elo Position", 
+          "data": {
+            "values": data.map(d => ({...d, Year: new Date(d.Year, 0)})) // Transforma "Year" em uma data
+          },
+          "transform": [{
+            "pivot": "index",
+            "value": "Position",
+            "groupby": ["Year"]
+          }],
+          "repeat": {
+            "layer": selectedValues
+          },
+          "spec": {
+            "layer": [{
+              "mark": {"type": "line", "stroke": "white", "strokeWidth": 4},
+              "encoding": {
+                "x": {"field": "Year", "type": "temporal"}, // Adicionado timeUnit aqui
+                "y": {"field": {"repeat": "layer"}, "type": "quantitative", "title": "Position","scale": {"reverse": true}}
+              }
+            },{
+              "mark": {"type": "line"},
+              "encoding": {
+                "x": {"field": "Year", "type": "temporal"}, // Adicionado timeUnit aqui
+                "y": {"field": {"repeat": "layer"}, "type": "quantitative", "title": "Position","scale": {"reverse": true}},
+                "stroke": {"datum": {"repeat": "layer"}, "type": "nominal"}
+              }
+            }]
+          }
+        };
+    
+        vegaEmbed('#vis2', yourVlSpec2);
       })
       .catch((error) => {
         console.error('Error:', error);
       });
-      
-    }
-    suggestionsList.innerHTML = '';
-    searchInput.value = '';
-  });
 }
 
 let buttons = [];
 
 function resetVis(){
-  // vegaEmbed('#vis', {});
+  vegaEmbed('#vis', {});
+  vegaEmbed('#vis2', {});
   // selectedValues = [];
   i = 2
   while(i < select.children.length){
@@ -158,19 +197,22 @@ fetch('/tables').then(response => response.json()).then(data => {
                 // caso não haja mais valores selecionados, limpa o gráfico
                 if (selectedValues.length === 0) {
                   vegaEmbed('#vis', {});
+                  vegaEmbed('#vis2', {});
                 }
               }
               
-              const queryString = selectedValues.join(',');
+              const queryString = JSON.stringify(selectedValues);
               fetch(`/query?data=${queryString}`)
               .then(response => response.json())
               .then(data => {
+                console.log(data);
                 minMaxBound = getMinMaxBound(data);
-                var yourVlSpec = {
+                 var yourVlSpec = {
                   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
                   "description": "Elo Rating evolution",
+                  "title": "Evolution of Rating Elo", 
                   "width": 600,
-                  "height": 400,
+                  "height": 300,
                   "data": {
                     "values": data.map(d => ({...d, Year: new Date(d.Year, 0)})) // Transforma "Year" em uma data
                   },
@@ -201,10 +243,43 @@ fetch('/tables').then(response => response.json()).then(data => {
                 };
             
                 vegaEmbed('#vis', yourVlSpec);
+                var yourVlSpec2 = {
+                  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+                  "description": "Elo Rating evolution",
+                  "width": 600,
+                  "height": 300,
+                  "title": "Evolution of Elo Position", 
+                  "data": {
+                    "values": data.map(d => ({...d, Year: new Date(d.Year, 0)})) // Transforma "Year" em uma data
+                  },
+                  "transform": [{
+                    "pivot": "index",
+                    "value": "Position",
+                    "groupby": ["Year"]
+                  }],
+                  "repeat": {
+                    "layer": selectedValues
+                  },
+                  "spec": {
+                    "layer": [{
+                      "mark": {"type": "line", "stroke": "white", "strokeWidth": 4},
+                      "encoding": {
+                        "x": {"field": "Year", "type": "temporal"}, // Adicionado timeUnit aqui
+                        "y": {"field": {"repeat": "layer"}, "type": "quantitative", "title": "Position","scale": {"reverse": true}}
+                      }
+                    },{
+                      "mark": {"type": "line"},
+                      "encoding": {
+                        "x": {"field": "Year", "type": "temporal"}, // Adicionado timeUnit aqui
+                        "y": {"field": {"repeat": "layer"}, "type": "quantitative", "title": "Position","scale": {"reverse": true}},
+                        "stroke": {"datum": {"repeat": "layer"}, "type": "nominal"}
+                      }
+                    }]
+                  }
+                };
+            
+                vegaEmbed('#vis2', yourVlSpec2);
               })
-              .catch((error) => {
-                console.error('Error:', error);
-              });
             });
 
             const label = document.createElement('label');
@@ -260,6 +335,33 @@ fetch('/tables').then(response => response.json()).then(data => {
     names.appendChild(b);
   });
 });
+
+// Cria o botão
+let button = document.createElement('button');
+
+// Define o texto do botão
+button.textContent = 'Compare players evolutions';
+
+// Define o evento de clique do botão
+button.onclick = function() {
+    window.location.href = '/search';
+};
+// Adiciona o botão ao cabeçalho
+let header = document.querySelector('header'); // Substitua 'header' pelo seletor correto do seu cabeçalho
+header.appendChild(button);
+
+let button2 = document.createElement('button');
+
+// Define o texto do botão
+button2.textContent = 'Competitions summary';
+
+// Define o evento de clique do botão
+button2.onclick = function() {
+    window.location.href = '/summary';
+};
+
+header.appendChild(button2);
+
 
 const h1 = document.querySelector('h1');
 

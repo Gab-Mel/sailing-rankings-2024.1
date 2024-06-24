@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Sailing Rankings</title>
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+  <header><h1>Sailing Rankings</h1></header>
+  <div id="names"></div>
+  <div id="home2">
+    <div id="playerInfo">
+      <!-- botão de retorna a página / -->
+      <button id="return" onclick="window.location.href='index.html'">
+        <i class="fas fa-arrow-left"></i>
+      </button>
+      <image src="https://get.pxhere.com/photo/vela-regatta-sail-sea-sport-sailing-water-transportation-sailboat-wind-wave-dinghy-sailing-sailboat-racing-wave-waterway-mast-sky-yacht-racing-boat-wind-scow-sailing-ship-ocean-boating-water-dhow-yawl-watercraft-sloop-skiff-recreation-cat-ketch-keelboat-windsurfing-1432447.jpg" alt="sailing" width="200px"></image>
+      <span id="player">Player Name: </span>
+    </div>
+    <div class="playerGraph">
+      <div id="vis">The chart will appear here</div>
+      <div id="vis2">...</div>
+    </div>
+    <!-- <div class = playerGraph><h2>General Data Results</h2></div> -->
+    <div class="playerGraph"><div id="rating">Table</div></div>
+    
+
+  <script src="scriptPlayers.js"></script>  
+</body>
+</html>
