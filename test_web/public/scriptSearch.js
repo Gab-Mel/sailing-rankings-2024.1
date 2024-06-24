@@ -168,12 +168,12 @@ fetch('/tables').then(response => response.json()).then(data => {
     buttons.push(b);
     b.addEventListener('click', () => {
       resetVis();
-      // change the button color to #ece6df and the others to white
+      // change the button color to #c9f3ff and the others to white
       buttons.forEach(button => {
-        button.style.backgroundColor = '#ac9098';
+        button.style.backgroundColor = '#7dc0d3';
         button.style.color = 'white';
       });
-      b.style.backgroundColor = '#ece6df';
+      b.style.backgroundColor = '#c9f3ff';
       b.style.color = 'black';
       fetch('/data?table=' + table)
         .then(response => response.json())

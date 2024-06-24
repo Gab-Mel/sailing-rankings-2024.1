@@ -7,7 +7,7 @@
 }
 
 body {
-  background-color: #ece6df;
+  background-color: #c9f3ff;
   font-family: 'Open Sans', sans-serif;
 }
 #rating {
@@ -18,16 +18,17 @@ body {
 }
 
 table {
-  background: #6a6997;
+  background: #6782b9;
   border-radius: 0.25em;
   border-collapse: collapse;
   margin-left: 5em;
   margin-right: 5em;
   padding: 5em;
+  
 }
 th {
-  border-bottom: 1px solid #364043;
-  color: #cebdb0;
+  border-bottom: 1px solid #6782b9;
+  color: #d7ba66;
   font-size: 1em;
   font-weight: 600;
   padding: 0.5em 1em;
@@ -45,7 +46,7 @@ tbody tr {
   transition: background 0.25s ease;
 }
 tbody tr:hover {
-  background: #585783;
+  background: #24184b;
 }
 
 
@@ -53,12 +54,12 @@ div{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    background-color: #ece6df;
+    background-color: #c9f3ff;
 }
 
 div h1{
     font-size: 2.5em;
-    color: #585783;
+    color: #24184b;
     text-align: left;
     padding: 20px;
     font-family: 'Arial', sans-serif;
@@ -121,7 +122,7 @@ header{
   margin-top: 10px;
   font-size: 1.15em;
   position: relative;
-  background-color: #ac9098;
+  background-color: #7dc0d3;
   color: white;
   padding: 0; /* Alterado para remover o padding duplicado */
   text-align: center;
@@ -129,7 +130,7 @@ header{
 
 #names button{
   font-size: 1.15em;
-  background-color: #ac9098;
+  background-color: #7dc0d3;
   color: white;
   text-align: center;
   border: none;
@@ -143,7 +144,7 @@ header{
 
 .yearsDiv{
   font-size: 1.15em;
-  background-color: #ac9098;
+  background-color: #7dc0d3;
   color: white;
   text-align: center;
   border: none;
@@ -159,12 +160,12 @@ header{
 }
 
 select option:hover {
-  background-color: #cebdb0; /* Cor de fundo no hover */
+  background-color: #d7ba66; /* Cor de fundo no hover */
 }
 
 .divS{
   font-size: 1.15em;
-  background-color: #ac9098;
+  background-color: #7dc0d3;
   color: white;
   text-align: center;
   border: none;
@@ -187,21 +188,21 @@ select option:hover {
   cursor: pointer;
   border-top-left-radius: 5px;
   border-top-right-radius: 5px;
-  background-color: #ece6df;
+  background-color: #c9f3ff;
   color: black; 
   margin-left: 1.5em;
 
 }
 
 #names .classSelect{
-    background-color: #ece6df;
+    background-color: #c9f3ff;
     color: black;
 }
 
 #home {
     display: flex;
     box-sizing: border-box;
-    background-color: #ece6df;
+    background-color: #c9f3ff;
 }
   
 #select {
@@ -259,7 +260,7 @@ background-color: #f1f1f1;
 
 header h1 {
     font-size: 2.5em; /* Tamanho da fonte */
-    color: #ac9098; /* Cor do texto */
+    color: #d7ba66; /* Cor do texto */
     text-align: center; /* Alinhamento do texto */
     padding: 20px; /* Espaçamento interno */
     font-family: 'Arial', sans-serif; /* Tipo de fonte */
@@ -286,7 +287,7 @@ header h1:hover {
   margin-top: 2em;
   margin-bottom: 1em;
   display: flex;
-  flex-direction:row-reverse; /* Alinha verticalmente */
+  flex-direction:initial; /* Alinha verticalmente */
   gap: 10px; /* Espaço entre a imagem e o texto */
 }
 h2{
@@ -294,7 +295,7 @@ h2{
 }
 
 #return {
-  background-color: #6a6997; /* Cor de fundo azul */
+  background-color: #6782b9; /* Cor de fundo azul */
   color: white; /* Cor do texto branco */
   border: none; /* Remove a borda */
   padding: 10px 20px; /* Espaçamento interno para torná-lo maior */
@@ -305,11 +306,11 @@ h2{
 }
 
 #return:hover {
-  background-color: #585783; /* Cor de fundo mais escura ao passar o mouse */
+  background-color: #24184b; /* Cor de fundo mais escura ao passar o mouse */
 }
 
 header button {
-  background-color: #6a6997; /* Cor de fundo azul */
+  background-color: #6782b9; /* Cor de fundo azul */
   color: white; /* Cor do texto */
   border: none; /* Remove a borda */
   padding: 10px 20px; /* Espaçamento interno */
@@ -321,7 +322,7 @@ header button {
 }
 
 header button:hover {
-  background-color: #585783; /* Cor de fundo mais escura ao passar o mouse */
+  background-color: #24184b; /* Cor de fundo mais escura ao passar o mouse */
   box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra maior para efeito de elevação */
 }
 

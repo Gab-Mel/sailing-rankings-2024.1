@@ -103,12 +103,12 @@ fetch('/tables').then(response => response.json()).then(data => {
     const b = document.createElement('button');
     buttons.push(b);
     b.addEventListener('click', () => {
-      // change the button color to #ece6df and the others to white
+      // change the button color to #c9f3ff and the others to white
       buttons.forEach(button => {
-        button.style.backgroundColor = '#ac9098';
+        button.style.backgroundColor = '#7dc0d3';
         button.style.color = 'white';
       });
-      b.style.backgroundColor = '#6a6997';
+      b.style.backgroundColor = '#6782b9';
       b.style.color = '#2c2851';
 
       // obter o índice de 'b' em 'buttons'
