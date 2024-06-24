@@ -7,7 +7,7 @@
 }
 
 body {
-  background: #105469;
+  background-color: #ededed;
   font-family: 'Open Sans', sans-serif;
 }
 #rating {
@@ -64,31 +64,58 @@ header{
 }
 
 #names{
-    padding-top: 1em;
-    margin-top: 10px;
-    font-size: 1.15em;
-    position: relative;
-    background-color: #3d71a2;
-    color: white;
-    padding: 1em;
-    text-align: center;
+  padding-top: 1em; /* Mantém o padding-top */
+  margin-top: 10px;
+  font-size: 1.15em;
+  position: relative;
+  background-color: #3d71a2;
+  color: white;
+  padding: 0; /* Alterado para remover o padding duplicado */
+  text-align: center;
 }
 
 #names button{
-    font-size: 1.15em;
-    /* position: absolute; */
-    bottom: 0;
-    /* left: 50%; */
-    transform: translateY(52%);
-    background-color: #3d71a2;
-    color: white;
-    text-align: center;
-    border: none;
-    padding: 0.25em;
-    cursor: pointer;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    margin-left: 1.5em;
+  font-size: 1.15em;
+  background-color: #3d71a2;
+  color: white;
+  text-align: center;
+  border: none;
+  padding: 0.25em 1em; /* Ajuste conforme necessário para espaçamento interno */
+  cursor: pointer;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-left: 1.5em;
+  /* Removido o transform e position para simplificar */
+}
+
+.yearsDiv{
+  font-size: 1.15em;
+  background-color: hsl(209, 45%, 44%);
+  color: white;
+  text-align: center;
+  border: none;
+  padding: 0.25em 1em; /* Ajuste conforme necessário para espaçamento interno */
+  cursor: pointer;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-right: 0.5em;
+  float: right; /* Alinha a div à direita */
+  display: flex;
+  /* transform: translateX(400%); */
+  /* Removido o transform e position para simplificar */
+}
+
+.divS{
+  font-size: 1.15em;
+  background-color: hsl(209, 45%, 44%);
+  color: white;
+  text-align: center;
+  border: none;
+  padding: 0.25em 1em; /* Ajuste conforme necessário para espaçamento interno */
+  cursor: pointer;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  margin-right: 0.5em;
 }
 
 #names2 button{
@@ -126,10 +153,20 @@ margin-left: 10em;
 padding-top: 2em;
 }
 
+#graphs{
+  flex: 0.7; /* 70% */
+  padding: 2em;
+}
+
 #vis {
-flex: 0.7; /* 70% */
-height: 100vh; /* Ocupa a altura total da viewport */
-padding: 2em;
+/* flex: 0.7; 70% */
+height: 50vh; /* Ocupa a altura total da viewport */
+/* padding: 2em; */
+}
+#vis {
+  /* flex: 0.7; 70% */
+  height: 50vh; /* Ocupa a altura total da viewport */
+  /* padding: 2em; */
 }
 
 #searchInput {
@@ -172,4 +209,61 @@ header h1 {
     font-weight: bold; /* Peso da fonte */
     text-transform: uppercase; /* Transforma o texto em maiúsculas */
     letter-spacing: 2px; /* Espaçamento entre as letras */
+}
+
+header h1:hover {
+  cursor: pointer; /* Muda o cursor para o estilo 'mão' ao passar o mouse */
+}
+
+#playerInfo{
+  margin: 10em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center; /* Alinha verticalmente */
+  gap: 10px; /* Espaço entre a imagem e o texto */
+}
+
+.playerGraph{
+  margin: 10em;
+  margin-top: 2em;
+  margin-bottom: 1em;
+  display: flex;
+  flex-direction:row-reverse; /* Alinha verticalmente */
+  gap: 10px; /* Espaço entre a imagem e o texto */
+}
+h2{
+  display: block;
+}
+
+#return {
+  background-color: #012B39; /* Cor de fundo azul */
+  color: white; /* Cor do texto branco */
+  border: none; /* Remove a borda */
+  padding: 10px 20px; /* Espaçamento interno para torná-lo maior */
+  border-radius: 5px; /* Bordas arredondadas */
+  font-size: 16px; /* Tamanho do texto */
+  cursor: pointer; /* Muda o cursor para indicar que é clicável */
+  transition: background-color 0.3s ease; /* Transição suave da cor de fundo */
+}
+
+#return:hover {
+  background-color: #012B39; /* Cor de fundo mais escura ao passar o mouse */
+}
+
+header button {
+  background-color: #012B39; /* Cor de fundo azul */
+  color: white; /* Cor do texto */
+  border: none; /* Remove a borda */
+  padding: 10px 20px; /* Espaçamento interno */
+  border-radius: 5px; /* Bordas arredondadas */
+  cursor: pointer; /* Muda o cursor para o estilo 'mão' */
+  margin-right: 1em; /* Espaçamento à esquerda */
+  box-shadow: 0 2px 4px rgba(0,0,0,0.2); /* Sombra sutil */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Transição suave para hover */
+}
+
+header button:hover {
+  background-color: #0056b3; /* Cor de fundo mais escura ao passar o mouse */
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra maior para efeito de elevação */
 }
