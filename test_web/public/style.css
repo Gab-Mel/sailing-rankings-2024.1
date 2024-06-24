@@ -56,6 +56,59 @@ div{
     background-color: #ededed;
 }
 
+div h1{
+    font-size: 2.5em;
+    color: #014055;
+    text-align: left;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+div h5{
+    font-size: 1.5em;
+    color: #2c5e53;
+    text-align: left;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+
+div h6{
+    font-size: 1.5em;
+    color: #000;
+    text-align: left;
+    padding: 20px;
+    font-family: 'Arial', sans-serif;
+    font-weight: bold;
+    letter-spacing: 2px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+li{
+  font-size: 1.5em;
+  color: #000;
+  text-align: left;
+  padding: 10px;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+  margin-left: 100px;
+}
+
+
 header{
     background-color: #333;
     color: white;
@@ -266,4 +319,8 @@ header button {
 header button:hover {
   background-color: #0056b3; /* Cor de fundo mais escura ao passar o mouse */
   box-shadow: 0 4px 8px rgba(0,0,0,0.3); /* Sombra maior para efeito de elevação */
+}
+
+.img-container {
+  text-align: center;
 }

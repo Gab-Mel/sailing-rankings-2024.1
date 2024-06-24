@@ -26,6 +26,13 @@ let dbSumulas = new sqlite3.Database('./sumulas_simples.db', sqlite3.OPEN_READON
   console.log('sumulas_simples.db conectado.');
 });
 
+let dbAbout = new sqlite3.Database('./about.db', sqlite3.OPEN_READONLY, (err) => {
+  if (err) {
+    console.error(err.message);
+  }
+  console.log('about.db conectado.');
+});
+
 
 dbPlayers.all("SELECT name FROM sqlite_master WHERE type='table';", [], (err, tables) => {
   if (err) {
@@ -193,6 +200,10 @@ app.get('/summary', (req, res) =>{
   res.sendFile(path.join(__dirname, 'public', 'summary.html'));
 })
 
+app.get('/about', (req, res) =>{
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
+})
+
 app.get('/playersapi', (req, res) => {
   const name = req.query.name;
   dbPlayers.all(`SELECT * FROM "Resultados" WHERE "Nome" = "${name}"`, [], (err, rows) => {
@@ -202,6 +213,14 @@ app.get('/playersapi', (req, res) => {
     res.send(rows);
   });
 });
+
+app.get('/about_us', (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'texts/about_us.html'))
+});
+
+
+
+
 
 app.listen(port, () => {
   console.log(`Servidor rodando em http://localhost:${port}`);
