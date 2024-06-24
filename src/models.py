@@ -332,82 +332,153 @@ class Keeners(Models):
 # print(error)
 
 
-# def glicko_calc(rating_a, rating_b, rd_a, rd_b, vol_a, vol_b, tau, result):
-#     q_a = np.log(10)/400
-#     q_b = np.log(10)/400
-#     g_a = 1/np.sqrt(1 + 3*q_a**2*rd_a**2/np.pi**2)
-#     g_b = 1/np.sqrt(1 + 3*q_b**2*rd_b**2/np.pi**2)
-#     e_a = 1/(1 + 10**(-g_a*(rating_a - rating_b)/400))
-#     e_b = 1/(1 + 10**(-g_b*(rating_b - rating_a)/400))
-#     d = 1/(q_b**2*g_a**2*e_a*(1 - e_a) + q_a**2*g_b**2*e_b*(1 - e_b))
-#     change_a = q_a/(1/rd_a**2 + g_b**2*e_a*(1 - e_a)*d)*(g_b*(result - e_a))
-#     change_b = q_b/(1/rd_b**2 + g_a**2*e_b*(1 - e_b)*d)*(g_a*(1 - result - e_b))
-#     change_rd_a = np.sqrt(1/(1/rd_a**2 + g_b**2*e_a*(1 - e_a)*d))
-#     change_rd_b = np.sqrt(1/(1/rd_b**2 + g_a**2*e_b*(1 - e_b)*d))
-#     change_vol_a = 1/(1/vol_a**2 + 1/change_rd_a**2)
-#     change_vol_b = 1/(1/vol_b**2 + 1/change_rd_b**2)
+def glicko_calc(rating_a, rating_b, rd_a, rd_b, vol_a, vol_b, tau, result):
+    q_a = np.log(10)/400
+    q_b = np.log(10)/400
+    g_a = 1/np.sqrt(1 + 3*q_a**2*rd_a**2/np.pi**2)
+    g_b = 1/np.sqrt(1 + 3*q_b**2*rd_b**2/np.pi**2)
+    e_a = 1/(1 + 10**(-g_a*(rating_a - rating_b)/400))
+    e_b = 1/(1 + 10**(-g_b*(rating_b - rating_a)/400))
+    d = 1/(q_b**2*g_a**2*e_a*(1 - e_a) + q_a**2*g_b**2*e_b*(1 - e_b))
+    change_a = q_a/(1/rd_a**2 + g_b**2*e_a*(1 - e_a)*d)*(g_b*(result - e_a))
+    change_b = q_b/(1/rd_b**2 + g_a**2*e_b*(1 - e_b)*d)*(g_a*(1 - result - e_b))
+    change_rd_a = np.sqrt(1/(1/rd_a**2 + g_b**2*e_a*(1 - e_a)*d))
+    change_rd_b = np.sqrt(1/(1/rd_b**2 + g_a**2*e_b*(1 - e_b)*d))
+    change_vol_a = 1/(1/vol_a**2 + 1/change_rd_a**2)
+    change_vol_b = 1/(1/vol_b**2 + 1/change_rd_b**2)
 
-#     return change_a,
+    return change_a,
 
-# class GlickoRating(Models):
-    # def __init__(self, ratings, rd, vol, tau=0.5) -> None:
-    #     self.ratings = ratings
-    #     self.rd = rd
-    #     self.vol = vol
-    #     self.tau = tau
+class GlickoRating(Models):
+    def __init__(self, ratings, rd, vol, tau=0.5) -> None:
+        self.ratings = ratings
+        self.rd = rd
+        self.vol = vol
+        self.tau = tau
 
-    # def fit(self, data):
-    #     for i in range(len(data)):
-    #         ratings_copy = copy.deepcopy(self.ratings)
-    #         rd_copy = copy.deepcopy(self.rd)
-    #         vol_copy = copy.deepcopy(self.vol)
-    #         results = data[i][0]
-    #         names = data[i][1]
-    #         for j in range(len(results)):
-    #             for k in range(j+1, len(results)):
-    #                 r = results[j] < results[k]
-    #                 change = glicko_calc(self.ratings[names[j]], self.ratings[names[k]], self.rd[names[j]], self.rd[names[k]], self.vol[names[j]], self.vol[names[k]], self.tau, r)
+    def fit(self, data):
+        for i in range(len(data)):
+            ratings_copy = copy.deepcopy(self.ratings)
+            rd_copy = copy.deepcopy(self.rd)
+            vol_copy = copy.deepcopy(self.vol)
+            results = data[i][0]
+            names = data[i][1]
+            for j in range(len(results)):
+                for k in range(j+1, len(results)):
+                    r = results[j] < results[k]
+                    change = glicko_calc(self.ratings[names[j]], self.ratings[names[k]], self.rd[names[j]], self.rd[names[k]], self.vol[names[j]], self.vol[names[k]], self.tau, r)
 
-    #                 ratings_copy[names[j]] += change[0]/len(results)
-    #                 ratings_copy[names[k]] += change[1]/len(results)
-    #                 rd_copy[names[j]] += change[2]/len(results)
-    #                 rd_copy[names[k]] += change[3]/len(results)
-    #                 vol_copy[names[j]] += change[4]/len(results)
-    #                 vol_copy[names[k]] += change[5]/len(results)
+                    ratings_copy[names[j]] += change[0]/len(results)
+                    ratings_copy[names[k]] += change[1]/len(results)
+                    rd_copy[names[j]] += change[2]/len(results)
+                    rd_copy[names[k]] += change[3]/len(results)
+                    vol_copy[names[j]] += change[4]/len(results)
+                    vol_copy[names[k]] += change[5]/len(results)
 
-    #         self.ratings = ratings_copy
-    #         self.rd = rd_copy
-    #         self.vol = vol_copy
+            self.ratings = ratings_copy
+            self.rd = rd_copy
+            self.vol = vol_copy
 
-    # def error(self, data):
-    #     error = 0
-    #     for i in range(len(data)):
-    #         results = data[i][0]
-    #         names = data[i][1]
-    #         for j in range(len(results)):
-    #             for k in range(j+1, len(results)):
-    #                 r = results[j] < results[k]
-    #                 change = glicko_calc(self.ratings[names[j]], self.ratings[names[k]], self.rd[names[j]], self.rd[names[k]], self.vol[names[j]], self.vol[names[k]], self.tau, r)
+    def error(self, data):
+        error = 0
+        for i in range(len(data)):
+            results = data[i][0]
+            names = data[i][1]
+            for j in range(len(results)):
+                for k in range(j+1, len(results)):
+                    r = results[j] < results[k]
+                    change = glicko_calc(self.ratings[names[j]], self.ratings[names[k]], self.rd[names[j]], self.rd[names[k]], self.vol[names[j]], self.vol[names[k]], self.tau, r)
 
-    #                 error += abs(change[0])
-    #                 error += abs(change[1])
-    #                 error += abs(change[2])
-    #                 error += abs(change[3])
-    #                 error += abs(change[4])
-    #                 error += abs(change[5])
+                    error += abs(change[0])
+                    error += abs(change[1])
+                    error += abs(change[2])
+                    error += abs(change[3])
+                    error += abs(change[4])
+                    error += abs(change[5])
 
-    #     return error/self.k * len(data)
+        return error/self.k * len(data)
 
-    # def k_fold(self, data, ratings, rd, vol):
-    #     total_error = 0
-    #     for i in range(len(data)):
-    #         train = data[:i] + data[i+1:]
-    #         test = data[i:i+1]
-    #         self.ratings = ratings
-    #         self.rd = rd
-    #         self.vol = vol
-    #         self.fit(train)
-    #         total_error += self.error(test)
+    def k_fold(self, data, ratings, rd, vol):
+        total_error = 0
+        for i in range(len(data)):
+            train = data[:i] + data[i+1:]
+            test = data[i:i+1]
+            self.ratings = ratings
+            self.rd = rd
+            self.vol = vol
+            self.fit(train)
+            total_error += self.error(test)
 
 
-    #     return total_error/len(data)
+        return total_error/len(data)
+
+
+    
+class GlickoTwoRating(Models):
+    def __init__(self, ratings, rd, vol, tau=0.5) -> None:
+        self.ratings = ratings
+        self.rd = rd
+        self.vol = vol
+        self.tau = tau
+        
+    def _glico_2_calc(rating_a, rating_b, rd_a, rd_b, vol_a, vol_b, tau, result):
+        q_a = np.log(10)/400
+        q_b = np.log(10)/400
+        g_a = 1/np.sqrt(1 + 3*q_a**2*rd_a**2/np.pi**2)
+        g_b = 1/np.sqrt(1 + 3*q_b**2*rd_b**2/np.pi**2)
+        e_a = 1/(1 + 10**(-g_a*(rating_a - rating_b)/400))
+        e_b = 1/(1 + 10**(-g_b*(rating_b - rating_a)/400))
+        d = 1/(q_b**2*g_a**2*e_a*(1 - e_a) + q_a**2*g_b**2*e_b*(1 - e_b))
+        change_a = q_a/(1/rd_a**2 + g_b**2*e_a*(1 - e_a)*d)*(g_b*(result - e_a))
+        change_b = q_b/(1/rd_b**2 + g_a**2*e_b*(1 - e_b)*d)*(g_a*(1 - result - e_b))
+        change_rd_a = np.sqrt(1/(1/rd_a**2 + g_b**2*e_a*(1 - e_a)*d))
+        change_rd_b = np.sqrt(1/(1/rd_b**2 + g_a**2*e_b*(1 - e_b)*d))
+        change_vol_a = 1/(1/vol_a**2 + 1/change_rd_a**2)
+        change_vol_b = 1/(1/vol_b**2 + 1/change_rd_b**2)
+
+        return change_a, change_b, change_rd_a, change_rd_b, change_vol_a, change_vol_b
+
+    def fit(self, data):
+        for i in range(len(data)):
+            ratings_copy = copy.deepcopy(self.ratings)
+            rd_copy = copy.deepcopy(self.rd)
+            vol_copy = copy.deepcopy(self.vol)
+            results = data[i][0]
+            names = data[i][1]
+            for j in range(len(results)):
+                for k in range(j+1, len(results)):
+                    r = results[j] < results[k]
+                    change = self._glicko_2_calc(self.ratings[names[j]], self.ratings[names[k]], self.rd[names[j]], self.rd[names[k]], self.vol[names[j]], self.vol[names[k]], self.tau, r)
+
+                    ratings_copy[names[j]] += change[0]/len(results)
+                    ratings_copy[names[k]] += change[1]/len(results)
+                    rd_copy[names[j]] += change[2]/len(results)
+                    rd_copy[names[k]] += change[3]/len(results)
+                    vol_copy[names[j]] += change[4]/len(results)
+                    vol_copy[names[k]] += change[5]/len(results)
+
+            self.ratings = ratings_copy
+            self.rd = rd_copy
+            self.vol = vol_copy
+
+    def error(self, data):
+        error = 0
+        for i in range(len(data)):
+            results = data[i][0]
+            names = data[i][1]
+            for j in range(len(results)):
+                for k in range(j+1, len(results)):
+                    r = results[j] < results[k]
+                    change = self._glicko_2_calc(self.ratings[names[j]], self.ratings[names[k]], self.rd[names[j]], self.rd[names[k]], self.vol[names[j]], self.vol[names[k]], self.tau, r)
+
+                    error += abs(change[0])
+                    error += abs(change[1])
+                    error += abs(change[2])
+                    error += abs(change[3])
+                    error += abs(change[4])
+                    error += abs(change[5])
+
+        return error/self.k * len(data)
+
+    """def k_fold(self, data, ratings, rd, vol):
+    total_error"""
