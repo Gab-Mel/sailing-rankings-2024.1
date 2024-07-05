@@ -1,27 +1,26 @@
+# sailing-rankings-2024.1
+Esse repositório armazena todos os scripts e resultados do projeto Fields 2024.1 juntamente com os avanços obtidos pela equipe do semestre anterior que pode ser vizualizado em [```saling-rankings```](https://github.com/cristianolarrea/sailing-rankings) desenvolvido em parceria da FGV EMAp com a CBVela. O desenvolvimento do projeto de 2024 é de autoria de:
+
 # sailing-rankings
 
-Esse repositório armazena todos os scripts e resultados do projeto Fields 2023 desenvolvido em parceria da FGV EMAp com a CBVela. O desenvolvimento do projeto é de autoria de:
-* Ana Carolina Erthal
-* Cristiano Larréa
-* Felipe Lamarca
-* Guilherme de Melo
-* Paloma Borges
+* Emanuel Bissiatti de Almeida
+* Gabriel de Melo Lima
+* Matheus Fillype Ferreira de Carvalho
+* Sillas Rocha da Costa
 
-O objetivo do projeto era obter os dados das competições de vela mundiais em anos passados e construor um modelo de ranking para os competidores de classes olímpicas da vela mundial. 
+O objetivo do projeto era atualizar os dados das competições de vela mundiais e nacionais e melhorar os modelos de ranking para os competidores de classes olímpicas da vela mundial. 
 
 ## Modelos de Ranking
-Os modelos de ranking gerados foram:
+Os modelos de ranking a se trabalhar são:
 - Elo ranking
   - Variações do parâmetro k
 - Keener's Method
   - Versões _alpha_ e _beta_
   - Versões com e sem _time decay_
- 
-Para maiores explicações, consultar o [relatório deste projeto](Relatório.pdf).
 
 ## Organização do repositório
 
-Link para os dados consolidados ao final do projeto: [https://docs.google.com/spreadsheets/d/1MRJr7QwXIA8lJFOOH_DVyLKqe3rxYV4r/edit?usp=sharing&ouid=113213641367731055764&rtpof=true&sd=true](https://docs.google.com/spreadsheets/d/1MRJr7QwXIA8lJFOOH_DVyLKqe3rxYV4r/edit?usp=sharing&ouid=113213641367731055764&rtpof=true&sd=true)[^1].
+### Recursos fornecidos pela equipe anterior:
 
 [`data`](data): pasta contendo os dados gerais do projeto. 
   - [`final_data.xlsx`](data/final_data.xlsx): Banco de dados completo construído durante o projeto, completamente tratado e pronto para uso
@@ -60,6 +59,10 @@ Link para os dados consolidados ao final do projeto: [https://docs.google.com/sp
   - [`generate-elo-ranking.py`](src/generate-elo-ranking.py): arquivo utilizado durante a contrução do Elo (somente para testes e estudo do modelo, não deve ser usado para gerar rankings)
   - [`prediction_error`](src/prediction_error): arquivo utilizado durante a elaboração da métrica de erro de predição (somente para testes e estudo, não deve ser usado para gerar rankings)
 
+### Atualizações:
 
-    [^1]: Link de leitor, sem possibilidade de edição. No início do próximo projeto do Field Project com a CBVela, sugere-se que o novo grupo entre em contato com algum integrante do grupo anterior para a transferência de propriedade do arquivo.
-
+[`dados`](dados_finais_2024): contem os dados atualizados do projeto.
+  - [`final_data.xlsx`](data/final_data.xlsx): Banco de dados completo construído durante o projeto, completamente tratado e pronto para uso;
+  - [`competições](dados_finais_2024/competicoes.xlsx): Lista de competições coletadas;
+  - [`sumulas`](dados_finais_2024/sumulas.xlsx): Banco de dados contendo todos os dados de atualização ainda não processados;
+  - [`atletas`](dados_finais_2024/atletas.xlsx): Lista contendo todos os atletas participantes das competições mapeadas.
